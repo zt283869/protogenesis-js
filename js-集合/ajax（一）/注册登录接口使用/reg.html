@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="txt1"/>
+		<input type="text" id="txt2"/>
+		<input type="button" id="btn" value="注册"/>
+		<script>
+			var txt1 = document.getElementById("txt1");
+			var txt2 = document.getElementById("txt2");
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){
+				var userName = txt1.value;
+				var userPwd = txt2.value;
+				//	注册
+//				var url = "http://10.35.162.48/php/login/reg.php?name="+userName+"&pwd="+userPwd;
+				//	登录
+				var url = "http://10.35.162.48/php/login/login.php?name="+userName+"&pwd="+userPwd;
+				var xhr;
+				if(XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject("Microsoft.XMLHttp");
+				}
+			//	连接属性	
+				xhr.open("GET",url);
+			//	发送	
+				xhr.send();
+			//	返回数据处理	
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						var data = JSON.parse(xhr.responseText);
+						console.log(data);	
+				}
+			}
+				}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>		  
+	<body>
+		<p id="txt">星期一</p>
+	<script>
+	// 
+		var a = 10;
+		var b = a;
+		b = 20;
+		console.log(a);
+		console.log(a==b);
+		var o = {
+			name:"tom",
+			age:20
+		}
+		var o2 = o;
+	//	console.log(o2);
+		var o3 = {
+			name:"tom",
+			age:20
+		}
+		o3.tel = "12343456765";
+		o2.age = 50;
+		console.log(o);
+		console.log(o2);
+		console.log(o===o2);
+		console.log(o===o3);
+	//	对象存储是一块连续的内存存储，赋值或者比较的时候使用地址
+		var o4 = {};
+		var o5 = {};
+		console.log(o4==o5);
+		
+		var oTxt = document.getElementById("txt").value;
+	//	console.log(typeof oTxt);
+		oTxt = "1111";
+		
+		var a = "星期一";
+		a = "1111";
+	</script>
+	</body>
+</html>

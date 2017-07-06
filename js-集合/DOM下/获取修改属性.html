@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+		<style>
+			.d1{
+				width:100px;
+				height:100px;
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1">
+		</div>
+		<script src="base.js"></script>	
+		<script>
+			var oDiv = document.getElementsByClassName("d1");
+		//	console.log(oDiv[0].style.width);  //只能获取行内样式
+		//	console.log(oDiv[0].currentStyle);
+			function getStyle(obj,attr){
+				if(obj.currentStyle){  //IE
+					return obj.currentStyle[attr];
+				}else{  // 非IE
+					return window.getComputedStyle(obj,null)[attr];
+				}
+			}
+			console.log(getStyle(oDiv[0],"width"));
+		</script>
+	</body>
+</html>

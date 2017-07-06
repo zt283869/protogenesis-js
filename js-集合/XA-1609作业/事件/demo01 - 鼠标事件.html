@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件</title>
+		<style>
+			*{padding: 0;margin: 0;}
+			img{border: 0;}
+			div{margin: 0 auto;}
+			a{text-decoration: none;}
+			ul,li,dl,dt{list-style-type: none;}
+			body{padding: 50px;}
+			#div1{background-color: rgba(0,0,0,0.1);padding: 5px;}
+			#follow{width: 50px;padding: 20px;background-color: rgba(0,255,0,1);text-align: center;position:absolute;left: 0;top: 0;display:none;}
+		</style>
+	</head>
+	<body>
+		<div id="div1" class="div-type">
+			我是DIV1
+		</div><br />
+		<input type="text" id="input1" placeholder="我是输入框" value="北京"/>
+		<input type="submit" id="btn" value="按钮" />
+		<select id="sel">
+			<option value="red">红色</option>
+			<option value="black">黑色</option>
+			<option value="orange">橙色</option>
+		</select>
+		<input type="button" value="随机换背景色" id="btn1"/>
+		<img src="girl.gif"/>
+		<script src="base.js"></script>
+		<script>
+	//	事件
+	//	鼠标	onclick  onmousover  onmouseout onfocus(获得焦点) onblur(失去焦点) 
+	//	window事件   onload onscroll onresize
+			var div1 = getId("div1");
+			var input1 = getId("input1");
+			var btn = getId("btn");
+			var sel = getId("sel");
+			var btn1 = getId("btn1");
+	//		input1.onblur = function(){ //事件的绑定
+	//			alert(1);
+	//		}
+	//		window.onscroll = function(){ //onload是页面和图片加载完成之后执行
+	//			alert(2);
+	//		}
+	//		双击	ondblclick  鼠标按下  onmousedown  onmouseup onmousemove
+		//	div1.ondblclick = function(){
+		//		alert("双击");
+		//	}
+		//	document.onmousedown = function(){
+		//		alert("鼠标按下！");
+		//	}
+		//	div1.onmouseup = function(){
+		//		alert("鼠标松开！");
+		//	}
+	//		document.onmousemove = function(){
+	//			console.log("鼠标移动！");
+	//		}
+	//		div1.onmouseover = function(){
+	//			console.log("鼠标移上！");
+	//		}
+		//	onmousemove onmouseover onmouseout  (onmouseenter onmouseleave)
+		//	onchange事件  内容改变的时候触发的事件
+			input1.onchange = function(){ //input框里的onchange不是即时判断
+				alert("内容改变了");
+			}
+			
+			sel.onchange = function(){ // select的onchange事件是选择完选项之后就触发
+	//			input1.value = sel.value;
+				document.body.style.background = sel.value;
+			}
+		//	onreset onsubmit	
+		
+	//	随机换背景色   rgb()	
+			btn1.onclick = function(){
+				document.body.style.background = "rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+			}
+		</script>
+	</body>
+</html>

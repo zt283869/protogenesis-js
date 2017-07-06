@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str = "Hello html css Javascript java";
+			console.log(str.indexOf("java"));
+//			console.log(navigator.userAgent);
+		//	indexOf()不支持正则
+			console.log(str.search(/java/gi));
+			console.log(str.match(/java/gi));
+			console.log(str.replace(/java/gi,"c++"));
+			
+			var reg = /java/gi;
+			var reg2 = new RegExp("java","ig");
+			console.log(str.search(reg2));
+			console.log(typeof reg2);
+			console.log(typeof reg);
+			console.log(RegExp);
+		</script>
+	</body>
+</html>

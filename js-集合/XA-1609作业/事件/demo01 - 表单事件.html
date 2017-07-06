@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件</title>
+		<style>
+			*{padding: 0;margin: 0;}
+			img{border: 0;}
+			div{margin: 0 auto;}
+			a{text-decoration: none;}
+			ul,li,dl,dt{list-style-type: none;}
+			body{padding: 50px;}
+			label{width:60px;display:inline-block;}
+			#div1{background-color: rgba(0,0,0,0.1);padding: 5px;}
+			#follow{width: 50px;padding: 20px;background-color: rgba(0,255,0,1);text-align: center;position:absolute;left: 0;top: 0;display:none;}
+			input[type="reset"],input[type="submit"]{padding:5px 15px;}
+		</style>
+	</head>
+	<body>
+		<form action="http://www.baidu.com" method="get" id="form1">
+			<label>名字：</label><input type="text" placeholder="请输入姓名"/><br/><br/>
+			<label>昵称:</label><input type="text" placeholder="请输入昵称"/><br/><br/>
+			<label>密码：</label><input type="password" placeholder="请输入密码"/><br/><br/>
+			<label>密码：</label><input type="password" placeholder="请再次输入密码"/><br/><br/>
+			<input type="reset" value="重置" id="res"/>
+			<input type="submit" value="提交" id="sub"/>
+		</form>
+		
+		<script src="base.js"></script>
+		<script>
+			var res = getId("res");
+			var sub = getId("sub");
+			var form1 = getId("form1");
+			res.onreset = function(){
+				alert("重置");
+			}
+			sub.onsubmit = function(){			
+				alert("提交");
+				return false;  //阻止表单提交 return false;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function aa(){
+				alert(1);
+			}
+		//	aa();
+			function bb(cc){
+				cc();
+			}
+			bb(function(){alert(3)});
+			
+			setInterval(function(){
+				
+			},1000)
+		//	存在函数A、B, 将B函数当做A函数的参数，在A函数里执行B，就将B叫做回调函数	,函数B在调用A的时候在定义
+		function ajax(url,fn){
+		//	创建xhr对象  异步的javascript和xml(json)   ajax
+			var xhr = new XMLHttpRequest();
+		//	创建连接属性
+			xhr.open("GET",url);
+		//	发送
+			xhr.send();
+		//	设置响应返回结果处理
+			xhr.onreadystatechange  = function(){
+		//		console.log(xhr.readyState);
+		//		响应完成并且数据找到的时候进行返回数据的处理		
+				if(xhr.readyState==4&&xhr.status==200){
+		//			console.log(xhr.responseText);
+					var data = xhr.responseText;
+//					回调函数
+					fn(data);
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

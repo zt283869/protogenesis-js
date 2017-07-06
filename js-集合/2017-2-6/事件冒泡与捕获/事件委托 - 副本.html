@@ -1,0 +1,38 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+<style>
+	#one,#two,#three{background-color:rgba(0,0,0,0.1);padding:50px;text-align:center;margin-bottom:10px;}
+	body{padding:100px 0;}
+</style>
+</head>
+<body>
+	<ul id="list">
+		<li>11111</li>
+	</ul>
+	<input type="button" value="add" id="btn"/>
+	<script src="base.js"></script>
+	<script>
+		var i=0;
+		getId("btn").onclick = function(){
+			var oLi = document.createElement("li");
+			i++;
+			oLi.innerHTML = i;
+			getId("list").appendChild(oLi);
+		}
+		var oLi1 = getId("list").getElementsByTagName("li");
+	//	for(var i=0;i<oLi1.length;i++){
+	//		oLi1[i].onclick = function(){
+	//			this.style.color = "red";
+	//		}
+	//	}
+		//	事件委托(事件委派)   利用冒泡 把事件添加到父元素上，再通过target寻找事件源点
+		//	元素后来添加进来的
+		getId("list").onclick = function(evt){
+			var e = evt||event;
+		//	alert(1);
+			e.target.style.color = "red";                      //源点
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#div1 {width:200px; height:200px; left: 0; top: 0; background:#CCC; position:absolute;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+document.onkeydown=function (ev)
+{
+	var oEvent=ev||event;
+	var oDiv=document.getElementById('div1');
+
+
+	if(oEvent.ctrlKey&&oEvent.shiftKey&&oEvent.altKey&&oEvent.keyCode==82){
+		oDiv.style.left="0";
+		oDiv.style.top="0";
+		oDiv.style.backgroundColor="#CCC"
+	}else if(oEvent.shiftKey&&oEvent.keyCode==67) {
+		var color = "rgba(" + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255)
+				+ "," + Math.round(Math.random() * 255) + ",1)";
+		oDiv.style.backgroundColor = color;
+		console.log(color)
+	}
+	if(oEvent.keyCode==37)
+	{
+		oDiv.style.left=oDiv.offsetLeft-10+'px';
+	}
+	else if(oEvent.keyCode==39)
+	{
+		oDiv.style.left=oDiv.offsetLeft+10+'px';
+	}
+	else if(oEvent.keyCode==38)
+	{
+		oDiv.style.top=oDiv.offsetTop-10+'px';
+	}
+	else if(oEvent.keyCode==40)
+	{
+		oDiv.style.top=oDiv.offsetTop+10+'px';
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<p>shift+c 变换颜色</p>
+	<p>ctrl+shift+alt+r 重置</p>
+</div>
+</body>
+</html>

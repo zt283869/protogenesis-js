@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#circle{
+				width: 40px;
+				height: 40px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#play{
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="circle">
+			
+		</div>
+		<input type="button" id="play" value="start" />
+		<script>
+			var play = document.getElementById("play");
+			var oDiv = document.getElementById("circle");
+			var timer;
+			var l,t;
+			//	获取引用样式的封装
+			function getStyle(obj,attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				}else{
+					return getComputedStyle(obj,null)[attr]
+				}
+			}
+			//	点击开始运动  匀速运动
+			play.onclick = function(){
+				clearInterval(timer);  //清除之前的定时器
+				var ispeed = 17;
+				var w = getStyle(document.getElementsByTagName("body")[0],"width");
+				var oWidth = getStyle(oDiv,"width");
+				console.log(parseInt(w)-parseInt(oWidth));
+				timer = setInterval(function(){
+					
+					_left = parseInt(getStyle(oDiv,"left"));
+					l = _left+ispeed;
+					
+//					_top = parseInt(getStyle(oDiv,"top")) + ispeed;
+//					console.log(_left);
+					if(l>parseInt(w)-parseInt(oWidth)){   //边界判断
+						l = parseInt(w)-parseInt(oWidth);
+//						ispeed*=-1;
+						clearInterval(timer);
+					}
+					oDiv.style.left = l+"px";
+//					oDiv.style.top = t+"px";
+				},30)
+			}
+		</script>
+	</body>
+</html>

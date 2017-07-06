@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height:100%;
+			}
+			.aaa{
+				width:200px;
+				height:100px;
+				background:rgba(0,0,0,0.2);
+			}
+		</style>
+	</head>
+	<body>
+		<select id="sel">
+			<option value="0">红</option>
+			<option value="1">黑</option>
+			<option value="2">黄</option>
+		</select>
+		<input type="button" value="随机换背景色" id="changeBgColor"/>
+		<div class="aaa"></div>
+		<form action="#">
+			<input type="text" id="txt"/>
+			<input type="button" value="按钮" id="btn1"/>
+			<input type="reset" id="btn2"/>
+			<input type="submit" id="btn3"/>
+		</form>
+		<script src="base.js"></script>
+		<script>
+		//	onclick 点击  ondbclick  双击事件
+		//	getClass("aaa")[0].onclick = function(){
+		//		alert("单击");
+		//	}
+		//	getClass("aaa")[0].ondblclick = function(){
+		//		alert("双击");
+		//	}
+		//	getClass("aaa")[0].onmousemove = function(){
+		//		console.log(1);
+		//	}
+			getClass("aaa")[0].onmousedown = function(){
+				console.log("鼠标按下");
+			}
+			getClass("aaa")[0].onmouseup = function(){
+				console.log("鼠标松开");
+			}
+		
+		//	onreset和onsubmit事件触发是在form上
+			document.getElementsByTagName("form")[0].onreset = function(){
+				alert(1);
+			}
+		//	onchange  内容改变事件
+			getId("txt").onchange = function(){
+				alert("内容改变了");
+			}
+			var color = ["#f00","#000","yellow"];
+			getId("sel").onchange = function(){
+				console.log(this.value);
+				document.getElementsByTagName("body")[0].style.background = color[this.value];
+			}
+			getId("changeBgColor").onclick = function(){
+				var oColor = "rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+				document.getElementsByTagName("body")[0].style.background = oColor;
+			}
+			
+		//	getId("txt").onkeydown = function(){
+		//		console.log("键盘按下");
+		//	}
+		//	getId("txt").onkeyup = function(){
+		//		console.log("键盘松开");
+		//	}
+			getId("txt").onkeypress = function(){
+				console.log("数字字母键盘按下");
+			}
+		</script>
+	</body>
+</html>
+{}

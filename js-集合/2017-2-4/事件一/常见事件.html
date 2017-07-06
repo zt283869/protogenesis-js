@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height:100%;
+			}
+			#d1{
+				width:100px;
+				height:100px;
+				background:#666;
+			}
+			body{
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+		
+		</div>
+		<form id="myForm">
+			<input type="text" id="txt"/>
+			<input type="reset" id="btn1"/>
+			<input type="submit" id="btn2"/>
+		</form>
+		<select id="sel">
+			<option value="11">艾欧尼亚</option>
+			<option value="222">祖安</option>
+			<option value="333">暗影岛</option>
+		</select>
+		<select id="changeBg">
+			<option>红</option>
+			<option>黑</option>
+			<option>黄</option>
+		</select>
+		<input type="button" value="随机颜色" id="changeColor"/>
+		<script src="base.js"></script>
+		<script>
+			var oDiv = document.getElementById("d1");
+			var txt = document.getElementById("txt");
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var myForm = document.getElementById("myForm");
+			var oSel  = document.getElementById("sel");
+			var changeBg = document.getElementById("changeBg");
+			var oBody = document.getElementsByTagName("body")[0];
+			var changeColor = document.getElementById("changeColor");
+		//	oDiv.ondblclick = function(){
+		//		alert("双击");
+		//	}
+		//	oDiv.onmousedown =  function(){
+		//		alert("鼠标按下")
+		//	}
+		//	oDiv.onmouseup =  function(){
+		//		alert("鼠标松开")
+		//	}
+			txt.onfocus = function(){
+				console.log("获得焦点")
+			}
+			txt.onblur = function(){
+				console.log("失去焦点")
+			}
+			myForm.onreset = function(){
+				console.log("reset");
+			}
+			myForm.onsubmit = function(){
+				console.log("submit");
+			}
+		//	reset和submit事件是在表单上触发的
+			txt.onchange = function(){
+				console.log("内容发生了改变");
+			}
+			
+		//	select框获取当前选中的内容是用value
+			
+			oSel.onchange = function(){
+				console.log(oSel.value);
+			}
+			
+			changeBg.onchange = function(){
+				var myColor = this.value;
+				console.log(myColor);
+				switch(myColor){
+					case "红":
+						oBody.style.background = "red";
+						break;
+					case "黑":
+						oBody.style.background = "black";
+						break;
+					case "黄":
+						oBody.style.background = "yellow";
+						break;
+					default:
+						break;
+				}
+			}
+			
+			changeColor.onclick = function(){
+				var myColor = "rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+				oBody.style.background = myColor;
+			}
+			
+			document.onkeydown = function(){
+				console.log("键盘被按下")
+			}
+			document.onkeyup = function(){
+				console.log("键盘被松开")
+			}
+		</script>
+	</body>
+</html>

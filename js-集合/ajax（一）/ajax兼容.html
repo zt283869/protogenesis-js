@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//	创建对象	
+			var xhr;
+			if(XMLHttpRequest){
+				xhr = new XMLHttpRequest();
+			}else{
+				xhr = new ActiveXObject("Microsoft.XMLHttp");
+			}
+		//	连接属性	
+			var url = "";
+			xhr.open("GET",url);
+		//	发送	
+			xhr.send();
+		//	返回数据处理	
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var data = JSON.parse(xhr.responseText);	
+				}
+			}
+		</script>
+	</body>
+</html>

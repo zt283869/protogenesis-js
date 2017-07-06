@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.d1{
+				width:200px;
+				height:100px;
+				background:red;
+			}
+			p{
+				margin:50px auto;
+			}
+			html,body{
+				height:100%;
+				background:#000; 
+			}
+			#Img{
+				position:absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+	<!--	<select>
+			<option>红</option>
+			<option>黑</option>
+			<option>黄</option>
+		</select>
+	-->	
+		<input type="button" value="随机换背景色" id="changeBgColor"/>
+		<div class="d1"></div>
+		<img src="girl.gif" id="Img"/>
+		<script src="base.js"></script>
+		<script>
+			var oDiv = getClass("d1");
+			oDiv[0].onmousedown = function(e){
+		//		console.log(window.event);
+				var evt = e||window.event;  // 事件的兼容
+				console.log(evt.clientX+"-"+evt.clientY);
+			//	console.log(evt.screenX+"-"+evt.screenY);
+				console.log(evt.pageX+"-"+evt.pageY);
+			}
+			document.getElementsByTagName("body")[0].onmousemove = function(e){
+				var evt = e||window.event;
+				getId("Img").style.left = evt.clientX-104+"px";
+				getId("Img").style.top = evt.clientY-104+"px";
+			}
+		</script>
+	</body>
+</html>

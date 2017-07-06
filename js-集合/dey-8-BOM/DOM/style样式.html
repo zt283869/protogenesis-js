@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+		<link rel = "stylesheet" href="11.css" id="bbbb"/>
+		<style>
+			#d1{
+				width:200px;
+				height:200px;
+				background:#666;
+			}
+			#pro{
+				width:200px;
+				height:40px;
+				border:1px  dashed red;
+			}
+			#item{
+				width:0px;
+				height:40px;
+				background:gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1"></div>
+		<input type="button" id="btn" value="改变宽度"/>
+		<div id="pro">
+			<div id="item"></div>
+		</div>
+		<script src="base.js"></script>	
+		<script>
+			getId("btn").onclick = function(){
+				console.log(getId("d1").style.width);
+				getId("d1").style.width = "200px";
+				getId("d1").style.background = "red";
+				getId("d1").style.borderRadius = "50%";
+		//		getId("d1").style.display = "none";
+				getId("bbbb").href = "222.css";
+			}
+			var w = 0;
+			var timer = setInterval(function(){
+				w+=10;
+				if(w>200){
+					clearInterval(timer);
+				}else{
+					getId("item").style.width = w+"px";
+				}
+				
+			},50)
+			
+		//	节点对象.style.属性只能获取行内样式	
+		//	currentStyle   getComputedStyle
+		//	console.log(getId("d1").currentStyle);  //IE
+		//	console.log(window.getComputedStyle(getId("d1"),null)); //非IE
+			function getStyle(obj,attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				}else{
+					return window.getComputedStyle(obj,null)[attr];
+				}
+			}
+			console.log(getStyle(getId("d1"),"height"));
+		</script>
+	</body>
+</html>

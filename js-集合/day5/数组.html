@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+		<style>
+			#code{
+				width:120px;
+				height:40px;
+				font-size:30px;
+				font-weight:bold;
+				color:#fff;
+				background:gray;
+				text-align:center;
+				line-height:40px;
+			}
+			
+		</style>
+	</head>		  
+	<body>
+		验证码<h1 id="code">SD4S</h1>
+		<select id="sel">
+			
+		</select>
+	<script>
+	//	number string  boolean undefined null object array 
+	//  数组的定义   数组里的元素可以是任何类型
+		var o = {}    
+		var a = [23,456,78,234,567,234,234];
+		console.log(a);
+		console.log(typeof a);
+		var b = new Array(12,23,4567);
+		console.log(b);
+		var c = new Array(12);
+		console.log(c);
+		var d = ["h",true,o,"l","o"];
+		console.log(d);
+	//	数组根据下标（位置）   位置从0开始计算   
+	//	length   数组名字.length
+		console.log(a[4]);
+		console.log(a.length);
+		var sum = 0;
+		var oLen = a.length;
+		for(var i=0;i<oLen;i++){
+			sum+=a[i];
+		}
+		console.log(sum/a.length);
+	//	
+		var arr = [1,2,3];
+		arr[10] = 20;   //自动扩展长度
+		arr.length = 100;
+		console.log(arr.length);
+	//	length属性可读可写
+	//	定义一个函数求和，函数调用给几个参数就对这几个参数求和
+		function aa(){
+	//	arguments  函数参数的数组  每个函数里都存在的对象
+	//		console.log(arguments);
+			var sum = 0 ;
+			for(var i=0;i<arguments.length;i++){
+				sum+=arguments[i];
+			}
+			return sum;
+		}
+		console.log(aa(1,2,10,100));
+	//	随机验证码  数字字母组合
+		var _code = document.getElementById("code");
+		_code.onclick = function(){
+			var arrCode = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F","G","H","I",
+				"J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+			var oLen = arrCode.length;
+			var res = "";
+			for(var i=0;i<4;i++){
+				res+=arrCode[parseInt(Math.random()*oLen)];
+			}
+			_code.innerHTML = res;
+		}
+		
+	//	产生一个服务器下拉菜单
+		var lolServer = ["艾欧尼亚","祖安","诺克萨斯","班德尔城","皮尔特沃夫","战争学院",
+			"巨神峰","雷瑟守备","裁决之地","黑色玫瑰","暗影岛","钢铁烈阳","均衡教派","水晶之痕","影流","守望之海",
+			"征服之海","卡拉曼达","皮城警备","比尔吉沃特","德玛西亚","弗雷尔卓德","无畏先锋","恕瑞玛","扭曲丛林",
+			"巨龙之巢","教育网专区"];
+		var oLen = lolServer.length;
+		var _sel = document.getElementById("sel");
+		for(var i=0;i<oLen;i++){
+	//			lolServer[i]
+			_sel.innerHTML+="<option>"+lolServer[i]+"</option>";
+		}
+	</script>
+	</body>
+</html>

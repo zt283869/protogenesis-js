@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>javascript</title>
+	<style>
+		*{margin:0;padding:0;}
+		div{margin:0 auto;}
+		.container{width:80%;height:500px;}
+		.count1 input,select{height:35px;line-height:35px;padding:0 10px;}
+		.count1 input{width:100px;}
+		table tr.sum input{width:195px;height:35px;line-height:35px;padding-left:5px;}
+		table tr.number input{width:48px;height:35px;line-height:35px;}
+	</style>
+	<script>
+		parseInt()
+	</script>
+</head>
+<body>
+	<div class="container">
+		
+		
+		<h1>简易计算器</h1>
+		<table border="1" style="background-color:rgba(0,0,255,0.3);text-align:cneter;">
+			<tr class="sum">
+				<td colspan="4"><input type="text" id="result" value=""/></td>
+			</tr>
+			<tr class="number">
+				<td><input type="button" value="+" id="operateAdd" onclick="operateClick('+')"/></td>
+				<td><input type="button" value="1" id="number1" onclick="numberClick(1)"/></td>
+				<td><input type="button" value="2" id="number2" onclick="numberClick(2)"/></td>
+				<td><input type="button" value="3" id="number3" onclick="numberClick(3)"/></td>
+			</tr>
+			<tr class="number">
+				<td><input type="button" value="-" id="operateMinus" onclick="operateClick('-')"/></td>
+				<td><input type="button" value="4" id="number4" onclick="numberClick(4)"/></td>
+				<td><input type="button" value="5" id="number5" onclick="numberClick(5)"/></td>
+				<td><input type="button" value="6" id="number6" onclick="numberClick(6)"/></td>
+			</tr>
+			<tr class="number">
+				<td><input type="button" value="*" id="operateTimes" onclick="operateClick('*')"/></td>
+				<td><input type="button" value="7" id="number7" onclick="numberClick(7)"/></td>
+				<td><input type="button" value="8" id="number8" onclick="numberClick(8)"/></td>
+				<td><input type="button" value="9" id="number9" onclick="numberClick(9)"/></td>				
+			</tr>
+			<tr class="number">
+				<td><input type="button" value="/" id="operateDivide" onclick="operateClick('/')"/></td>
+				<td><input type="button" value="0" id="number9" onclick="numberClick(0)"/></td>
+				<td><input type="button" value="C" id="clear" onclick="clearN()"/></td>
+				<td><input type="button" value="=" id="operateEqual" onclick="equalClick()"/></td>
+			</tr>
+		</table>
+		<script>
+			var strs1="",operateN="",flag=0;
+			var result = document.getElementById("result");
+		//numberClick   数字的点击
+			function numberClick(i){
+				if(flag==1){
+					result.value=i;
+					flag=0;
+				}else{
+					if(result.value!=0){   //
+						result.value+=i;
+					}else{                 //==0
+						result.value=i;
+					}
+				}				
+			}
+		
+		//operateClick    操作符加减乘除的点击
+			function operateClick(s){
+				flag=1;
+				strs1=result.value;
+				operateN=s;
+			}
+		 
+		//equalClick     等于号的点击进行计算
+			function equalClick(){
+		//		result.value=result.value+operateN+str1;			
+				switch(operateN){
+					case "+":
+						result.value=parseInt(result.value)+parseInt(strs1);
+						break;
+					case "-":
+						result.value=parseInt(result.value)-parseInt(strs1);
+						break;
+					case "*":
+						result.value=parseInt(result.value)*parseInt(strs1);
+						break;
+					case "/":
+						result.value=parseInt(result.value)/parseInt(strs1);
+						break;
+					default:
+						break;
+				}
+				strs1="";
+				operateN="";
+			}
+		
+		//clearN   清0操作
+			function clearN(){
+				strs1="";
+				operateN="";
+				flag=0;
+				result.value="0";
+			}
+		</script>
+	</div>
+
+	
+</body>
+</html>

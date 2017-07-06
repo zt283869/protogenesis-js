@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height: 100%;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#circle,#circle1{
+				width: 40px;
+				height: 40px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#circle1{
+				top: 150px;
+				left: 600px;
+			}
+			#play{
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="circle">
+			
+		</div>
+		<div id="circle1">
+			
+		</div>
+		<input type="button" id="play" value="start" />
+		<script>
+			var play = document.getElementById("play");
+			var oDiv = document.getElementById("circle");
+			var oDiv1 = document.getElementById("circle1");
+			var bar = document.getElementById("bar");
+			var w = getStyle(document.getElementsByTagName("body")[0],"width");
+			var timer;
+			//	获取引用样式的封装
+			function getStyle(obj,attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				}else{
+					return getComputedStyle(obj,null)[attr]
+				}
+			}
+			//	点击开始运动
+			var sX;
+			var l;
+			oDiv1.onmouseover = function(){
+				timer = setInterval(function(){
+					_left = parseInt(getStyle(oDiv1,"left"));
+					sX = (0-_left)/15;
+
+					sX = sX>0?Math.ceil(sX):Math.floor(sX);
+					l  = _left + sX;
+					if(l==0){
+						clearInterval(timer);
+					}
+					oDiv1.style.left = l+"px";
+					
+				},30)
+			}
+		</script>
+	</body>
+</html>

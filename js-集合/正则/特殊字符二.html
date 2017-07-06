@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var reg = /^[^0-9]$/;
+			console.log(reg.test("8"));
+			
+			//	\d 数字   \w 数字字母下划线     \s 空白字符
+			var reg2 =  /a\b/;
+			console.log(reg2.test("sdrf3a"));
+			
+			//匹配加号
+			var reg3 = /^\+/;
+			console.log(reg3.test("+10086"));
+			
+			var reg4 = /\+.{4,10}?$/;
+			console.log(reg4.test("+^^%T@#ER$?"));
+			
+		</script>
+	</body>
+</html>

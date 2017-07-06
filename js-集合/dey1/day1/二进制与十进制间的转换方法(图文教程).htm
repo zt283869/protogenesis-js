@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0063)http://www.360doc.com/content/11/0308/14/5327079_99222581.shtml -->
+<html xmlns="http://www.w3.org/1999/xhtml"><style type="text/css" id="19320116000"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="./二进制与十进制间的转换方法(图文教程)_files/hm.js"></script><script type="text/javascript">
+            if (navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("Android") > 0 || navigator.userAgent.indexOf("iPod") > 0) {  //手机端跳转
+                var patt1 = new RegExp("[0-9]*_[0-9]*");
+                var url = patt1.exec(location.href);
+                if (url != "") {
+                    self.location = "http://www.360doc.cn/article/" + url + ".html";
+                }
+            }
+    </script>
+    
+    <meta content="360doc" name="classification">
+    
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/5327079_99222581.html">
+    <meta content="二进制,十进制,小数" name="keywords">
+    <meta content="二进制与十进制间的转换方法(图文教程)" name="description">
+    <meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/5327079_99222581.html">
+    <meta content="主要介绍二进制与十进制之间的相互转换方法，包括整数、小数以及负数！八进制和十六进制的转换只需改成逢八进一或逢十六进一即可！" name="360docabstract">
+
+    <meta content="www.360doc.com" name="author">
+
+    <title>
+        二进制与十进制间的转换方法(图文教程)
+    </title>
+    
+    <script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/jquery1.js"></script>
+    <script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/jQuery.md5.js"></script>
+    
+    <script type="text/javascript" language="javascript">
+        window.onerror = ignoreError;
+        function ignoreError() {
+            return true;
+        }
+    </script>
+
+    <link href="./二进制与十进制间的转换方法(图文教程)_files/wzhead-cleaned.css" rel="stylesheet" type="text/css">
+    <link href="./二进制与十进制间的转换方法(图文教程)_files/wz20130912-cleaned.css" rel="stylesheet" type="text/css">
+
+
+    
+
+    <script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/indexhead.js"></script><script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/chat.js"></script><script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/chatuserlist.js"></script><link rel="stylesheet" type="text/css" href="./二进制与十进制间的转换方法(图文教程)_files/chat.css">
+    <script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/showarticlefollow20130912.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?d86954201130d615136257dde062a503";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+<script src="./二进制与十进制间的转换方法(图文教程)_files/share.js"></script><script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/EssayforIE120425.js"></script><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=6aba13f0.css"></head><style type="text/css" id="19320117000"></style>
+<body style="font-family: Arial, Helvetica, sans-serif;" onmouseup="setDragEnd()" onmousemove="DragDiv();" onclick="delAllDiv(event)">
+
+    <span id="LayerLogin"></span>
+    <div style="position: fixed; width: 100%; z-index: 1000;">
+        <div class="mainnav">
+            <div class="mainnav1">
+                <div class="lf360" style="padding-left: 5px;">
+                    <a href="http://www.360doc.com/index.html">
+                        <img src="./二进制与十进制间的转换方法(图文教程)_files/logoo.gif"></a>
+                </div>
+                <div style="width: 625px; padding-top: 0px; padding-left: 4px; position: absolute;">
+                    <table height="34" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr id="daohangtr">
+                                <td style="width: 185px; _width: 0px; *width: 0px !important;"></td>
+                                <td class="navwz1" width="95">
+                                    <a href="http://www.360doc.com/index.html">首&nbsp;页</a>
+                                </td>
+                                <td width="100" class="  navwz1">
+                                    <a href="http://www.360doc.com/readroom.html">阅览室</a>
+                                </td>
+                                <td width="88" class="  navwz1">
+                                    <a href="http://www.360doc.com/weekstar.html">馆友</a>
+                                </td>
+                                <td width="132" class="  navwz1">
+                                    <a href="http://www.360doc.com/my360doc.aspx">我的图书馆</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rt360" style="padding-top: 6px; width: 133px; padding-left: 38px;" id="outerdiv"><div class="denglbj lan2"><div style=" width:43px; float:left; text-align:center;" onmouseover="this.style.backgroundColor=&#39;#e5e5e5&#39;;this.parentNode.className=&#39;denglbj2 lan2&#39;" onmouseout="this.style.backgroundColor=&#39;#fcfcfc&#39;;this.parentNode.className=&#39;denglbj lan2&#39;"><a href="javascript:void(0)" onclick="loginnew()">登录</a></div><div style=" width:1px; float:left; "></div><div style="width:46px; float:left;text-align:center; margin-left:1px;*margin-left:0px;" onmouseover="this.style.backgroundColor=&#39;#e5e5e5&#39;;this.parentNode.className=&#39;denglbj3 lan2&#39;" onmouseout="this.style.backgroundColor=&#39;#fcfcfc&#39;;this.parentNode.className=&#39;denglbj lan2&#39;" id="regdiv"><a href="http://www.360doc.com/register.aspx?refer=800" target="_blank">注册</a></div><div class="boxwid xinngdui" id="bfdiv"><a href="http://www.360doc.com/content/11/0308/14/5327079_99222581.shtml#"><img id="imgbfabc" src="./二进制与十进制间的转换方法(图文教程)_files/5.gif"></a></div><div style=" position: absolute; margin-left:35px; *margin-left:-95px;_margin-left:-93px; width:96px;display:none;z-index:200;" id="func"><div class="tugduo3" id="divfunc" style="cursor:pointer;float:right; width:41px;"><div style=" height:26px; width:39px; border:1px solid #d4d4d4; border-bottom:none; background-color:#fff;"></div></div><div class="tipzhu3  right hui2" id="layerdiv"><ul><li><a href="http://www.360doc.com/advice.html" target="_blank">留言交流</a></li><li><a href="http://www.360doc.com/helpnew.html" target="_blank">网文摘手</a></li><li><a href="http://www.360doc.com/mobilapp.htm" target="_blank">手机客户端</a></li><li style=" border:none;"><a href="http://www.360doc.com/help.html" target="_blank">帮助</a></li></ul></div></div></div></div>
+                <div class=" rt360" style="padding-top: 6px; padding-right: 0px;">
+                    <div class="lf360 serch">
+                        <input name="input2" class="serchpt" id="txtSearchword" onkeydown="ongosearch()" onkeyup="showIntelliSense()" onfocus="if(this.value==&#39;搜文章 找馆友&#39;) this.value=&#39;&#39;;this.style.color=&#39;#272727&#39;" onblur="if(!this.value) {this.value=&#39;搜文章 找馆友&#39;;this.style.color=&#39;#b2b2b2&#39;;}" onpaste="showIntelliSense1()" type="text" value="搜文章 找馆友">
+                    </div>
+                    <div class="lf360 ssuo">
+                        <a id="searchlinkid" href="javascript:gosearch();"></a>
+                    </div>
+                    <div id="divsearch" style="margin-top: 25px; margin-left: 1px; display: none; position: absolute; z-index: 100;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navxt">
+        </div>
+    </div>
+    <div style="height: 44px; _height: 0px; width: 100%;"></div>
+
+    <div class="both">
+    </div>
+    <div id="docTotalInfo" class="mainzt" style="width: 1047px;">
+        <table class="index_main" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td align="left" valign="top" width="727px">
+                        <div id="ADAboveArtContent"></div>
+                        <div style="height: 7px;">
+                        </div>
+                        <table border="0" cellpadding="0" cellspacing="0" class="mainbj6" id="docArtClass">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; text-align: center;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table style="width: 100%; text-align: left;" border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="biaoti">
+                                                                        <div class="biaoti2 lf360">
+                                                                            二进制与十进制间的转换方法(图文教程)
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="height: 32px;">
+
+
+                                                                        <div style="width: 670px; height: 28px; padding-left: 26px; color: #777b7a;">
+                                                                            <table>
+                                                                                <tbody><tr>
+                                                                                    <td>收藏人：<span class="name" onclick="wzhitnew(1);"><a href="http://www.360doc.com/userhome/5327079" target="_blank">csdsq</a></span>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="btzctsg" id="spanfollowstatus"><div class="gzbt1"><a onclick="gzuser(5327079);wzhitnew(2);" href="javascript:void(0)"></a></div></div>
+                                                                                        <script>isfollow(5327079);</script>
+
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="ytdh1"><a onclick="doctalk();wzhitnew(106);" href="javascript:void(0)"></a></div>
+
+                                                                                    </td>
+
+                                                                                </tr>
+                                                                            </tbody></table>
+                                                                        </div>
+
+
+
+
+                                                                        <div class="wztopxx">
+                                                                            <div style="float: left; height: 28px; padding-top: 7px;">
+                                                                                <table cellpadding="0" cellspacing="0" style="position: relative; z-index: 4">
+                                                                                    <tbody>
+                                                                                        <tr>
+
+                                                                                            <td>
+                                                                                                2011-03-08&nbsp;|&nbsp;阅：<span id="360doc_Readnum">378715</span>&nbsp;&nbsp;<span style="position: relative;">转：<span onclick="wzhitnew(3)" id="360doc_saverNum"><span style="cursor:pointer;" onclick="javascript:ShowSaverUser();">833</span></span><span id="360doc_saverUser"><div id="sameArtOuter" style="display: none; position: absolute; height: 305px; width: 144px; left: 0px; margin-top: 15px; z-index: 100000;"><div id="sameArt" style=" overflow-y: auto;  height:300px;overflow-x: hidden; z-index: 100;right:0px;margin-top:-10px;" onclick="event.cancelBubble=true;"></div></div></span></span>&nbsp;&nbsp;
+
+
+
+                                                                                            </td>
+
+                                                                                            <td>
+                                                                                                <div style="position: relative;">
+                                                                                                    &nbsp;|&nbsp;<span id="docsource">&nbsp;&nbsp;<a onclick="wzhitnew(14);" href="http://52cpp.5d6d.com/thread-22-1-1.html" target="_blank">来源</a></span>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="display: none; margin-left: 48px;" id="zihaoboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont3" onclick="ChangeArtSize(3, this); wzhitnew(15); " name="radio" type="radio" value="1">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(3,this);wzhitnew(15); " style="cursor: pointer;">
+                                                                                                            大
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont2" onclick="ChangeArtSize(2, this); wzhitnew(16); " name="radio" type="radio" value="2">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(2,this);wzhitnew(16); " style="cursor: pointer;">
+                                                                                                            中
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont1" onclick="ChangeArtSize(1, this); wzhitnew(17); " name="radio" type="radio" value="3">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(1,this);wzhitnew(17); " style="cursor: pointer;">
+                                                                                                            小
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="margin-left: 76px; display: none;" id="sekuaiboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <img src="./二进制与十进制间的转换方法(图文教程)_files/cr1.gif" id="docArtC1" onclick="ChangeArtClass(1,this);wzhitnew(18);" style="cursor: pointer;"><img src="./二进制与十进制间的转换方法(图文教程)_files/cr2.gif" id="docArtC2" onclick="ChangeArtClass(2,this);wzhitnew(19);" style="cursor: pointer;"><img src="./二进制与十进制间的转换方法(图文教程)_files/cr3.gif" id="docArtC3" onclick="ChangeArtClass(3,this);wzhitnew(20);" style="cursor: pointer;"><img src="./二进制与十进制间的转换方法(图文教程)_files/cr4.gif" id="docArtC4" onclick="ChangeArtClass(4,this);wzhitnew(21);" style="cursor: pointer;"><img src="./二进制与十进制间的转换方法(图文教程)_files/cr5.gif" id="docArtC5" onclick="ChangeArtClass(5,this);wzhitnew(22);" style="cursor: pointer;"><img src="./二进制与十进制间的转换方法(图文教程)_files/cr6-1.gif" id="docArtC6" onclick="ChangeArtClass(6,this);wzhitnew(23);" style="cursor: pointer;">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img onmouseover="changedivdisplay(1);" src="./二进制与十进制间的转换方法(图文教程)_files/wz1.gif"></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;" onmouseover="changedivdisplay(2);">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img src="./二进制与十进制间的转换方法(图文教程)_files/wz2.gif"></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.360doc.com/content/11/0308/14/5327079_99222581.shtml#" onclick=" setTimeout(showShareLayer, 10);wzhitnew(4);">分享</a>&nbsp;</td>
+                                                                                            <td>
+                                                                                                <a href="http://www.360doc.com/content/11/0308/14/5327079_99222581.shtml#" onclick="  setTimeout(showShareLayer, 10);wzhitnew(5);">
+                                                                                                    <img style="cursor: pointer;" src="./二进制与十进制间的转换方法(图文教程)_files/tb10.gif"></a><div class="fenxiang" id="fenxiangLayer" style="display: none; border: none; width: 110px; margin-left: -28px; _margin-left: -40px;"><div style="border:1px solid #cbcbcb; height:240px; width:108px;"><div id="bdshare" class="bdsharebuttonbox bdshare_t bds_tools get-codes-bdshare share-bar-btn bdshare-button-style0-16" data-bd-bind="1459783493306"><table cellpadding="0" cellspacing="0" width="108" style=" background-color:#fff; "><tbody><tr><td width="12"></td><td height="29" onclick="wzhitnew(6);"><a href="javascript:void(0);" class="bds_sqq" data-cmd="sqq" title="分享给QQ好友">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ好友</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(6);"><a class="bds_qzone" data-cmd="qzone" href="javascript:void(0);" title="分享到QQ空间">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ空间</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(9);"><a class="bds_tsina" data-cmd="tsina" href="javascript:void(0);" title="分享到新浪微博">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新浪微博</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(10);"><a class="bds_tqq" data-cmd="tqq" href="javascript:void(0);" title="分享到腾讯微博">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;腾讯微博</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(7);"><a class="bds_renren" data-cmd="renren" href="javascript:void(0);" title="分享到人人网">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人人网</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(8);"><a class="bds_kaixin001" href="javascript:void(0);" data-cmd="kaixin001" title="分享到开心网">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开心网</a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);" onclick="showdivemail();wzhitnew(12);"><div class="bds_py">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐给朋友</div></a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);"><div class="bds_jubao" onclick="showAlertLayer();wzhitnew(13);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;举报</div></a></td></tr></tbody></table></div></div></div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div id="resavelayer1" class="rt360"><div class="zswdbtn1"><a href="javascript:void(0);" onclick="SaveArt();wzhitnew(24);"></a></div><div style="position: absolute;display:none;z-index:100000;" id="fuzhitishidiv"></div></div>
+
+
+                                                                            <div id="shareweixinabove" class="rt360"> <div class="fxwx2bt"><a href="javascript:void(0);" onclick="shareWeixin();wzhitnew(65);"></a></div></div>
+
+
+                                                                            <table cellpadding="0" cellspacing="0" style="text-align: center; margin: 0px auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div id="AlertArt1" style="display: none; position: absolute;">
+                                                                                            </div>
+                                                                                            <div id="SendToFriends1" style="display: none; position: absolute; z-index: 100;">
+                                                                                            </div>
+                                                                                            <div class="lf360 zcbutton" style="margin-left: 100px;">
+                                                                                            </div>
+                                                                                            <div class="lf360">
+                                                                                                &nbsp;&nbsp;
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                        <table class="wenzhangcss" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="xiantao">
+                                                                        </div>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" valign="top" width="670px" style="height: 200px;">
+                                                                        <span id="articlecontent" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event)" style="">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td width="670px" style="position: relative;">
+
+                                                                                            <div><strong><font color="#ff0000"><span style="COLOR: #008000"><br>本文转自：</span><a href="http://52cpp.5d6d.com/thread-22-1-1.html"><span style="COLOR: #008000">http://52cpp.5d6d.com/thread-22-1-1.html</span></a><br><br>一、<span class="t_tag" oncg="tagshow(event)" href="tag.php?name=%d5%fd%d5%fb%ca%fd">正整数</span>的<span class="t_tag" oncg="tagshow(event)" href="tag.php?name=%ca%ae%bd%f8%d6%c6">十进制</span>转换二进制：<br></font><font color="#0000ff">要点：除二取余，倒序排列</font></strong><br><font color="#006400"><strong><span class="t_tag" oncg="tagshow(event)" href="tag.php?name=%bd%e2%ca%cd">解释</span>：将一个十进制数除以二，得到的商再除以二，依此类推直到商等于一或零时为止，倒取将除得的余数，即换算为<span class="t_tag" oncg="tagshow(event)" href="tag.php?name=%b6%fe%bd%f8%d6%c6%ca%fd">二进制数</span>的结果</strong></font><br>例如把52换算成二进制数，计算结果如图：<br>&nbsp;<img id="aimg_32" oncg="zoom(this, this.src)" alt="10-2-52.gif" src="./二进制与十进制间的转换方法(图文教程)_files/9796997_1.gif" width="260" w="260" initialized="true" outfunc="null" x="211" y="577" h="136" file="http://image24.360doc.com/DownloadImg/2011/03/0814/9796997_1.gif" status="2" unselectable="true"> <br><br>52除以2得到的余数依次为：0、0、1、0、1、1，倒序排列，所以52对应的二进制数就是110100。<br>由于<span class="t_tag" oncg="tagshow(event)" href="tag.php?name=%bc%c6%cb%e3%bb%fa">计算机</span>内部表示数的字节单位都是定长的，以2的幂次展开，或者8位，或者16位，或者32位....。<br>于是，一个二进制数用计算机表示时，位数不足2的幂次时，高位上要补足若干个0。本文都以8位为例。那么：<br><font face="Arial "><font color="#ff0000">(52)</font><font color="#ff0000">10</font><font color="#ff0000">=(00110100)</font><font color="#ff0000">2</font></font><br><br><br><br><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"><font color="#ff0000"><strong>二、负整数转换为二进制</strong></font></font></font></font></font><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"><font color="#0000ff"></font></font></font></font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"><font color="#ff0000"></font></font></font></font></font><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"><font color="#ff0000"></font></font></font></font></font><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"><font color="#ff0000"></font><font color="#0000ff"><strong>要点：取反加一</strong></font></font></font></font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"><font color="#0000ff"></font></font></font></font></font><font face="Arial "><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#006400"><strong>解释：将该负整数对应的正整数先转换成二进制，然后对其“取补”，再对取补后的结果加1即可</strong></font></font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"></font></font></font></font><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444">例如要把-52换算成二进制：</font></font></font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444">1.先取得52的二进制：00110100</font></font></font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444">2.对所得到的二进制数取反：11001011</font></font></font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444">3.将取反后的数值加一即可：11001100</font></font></font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444">即：<font color="#ff0000">(</font></font></font></font></font><font face="Arial "><font color="#ff0000">-52)</font><font color="#ff0000">10</font><font color="#ff0000">=(11001100)</font><font color="#ff0000">2</font></font><br><font face="Arial "><font color="#111111"><font face="Verdana, Helvetica, Arial, sans-serif "><font color="#444444"><br></font></font></font></font><br><font face="Arial "><br></font><br><font face="Arial "><font color="#ff0000"><strong>三、小数转换为二进制</strong></font></font><br><font face="Arial "><font color="#0000ff"><strong>要点：乘二取整，正序排列</strong></font></font><br><font face="Arial "><font color="#006400"><strong>解释：对被转换的小数乘以2，取其整数部分(0或1)作为二进制小数部分，取其小数部分，再乘以2，又取其整数部分作为二进制小数部分，</strong></font></font><font color="#006400"></font><font face="Arial "><font color="#006400"><strong>然后取小数部分，再乘以2，直到小数部分为0或者已经去到了足够位数。每次取的整数部分，按先后次序排列，就构成了二进制小数的序列</strong></font></font><br><font face="Arial ">例如把0.2转换为二进制，转换过程如图：</font><br><font face="Arial "><span style="position: absolute; display: none" id="attach_33" oncgover="showmenu(this.id, 0, 1)"></span><img id="aimg_33" oncgover="showmenu(this.id, false, 2)" oncg="zoom(this, this.src)" alt="10-2-0.2.gif" src="./二进制与十进制间的转换方法(图文教程)_files/9796997_2.gif" width="192" file="http://image24.360doc.com/DownloadImg/2011/03/0814/9796997_2.gif" status="2"> </font><br><font face="Arial "><br></font><font face="Arial ">0.2乘以2，取整后小数部分再乘以2，运算4次后得到的整数部分依次为0、0、1、1，结果又变成了0.2，</font><br><font face="Arial ">若果0.2再乘以2后会循环刚开始的4次运算，所以0.2转换二进制后将是0011的循环，即：</font><br><font face="Arial "><font color="#ff0000">(0.2)10=(0.0011 0011 0011 .....)2</font></font><br><font face="Arial ">循环的书写方法为在循环序列的第一位和最后一位分别加一个点标注</font><br><font face="Arial "><span style="position: absolute; display: none" id="attach_34" oncgover="showmenu(this.id, 0, 1)"></span><img id="aimg_34" oncgover="showmenu(this.id, false, 2)" oncg="zoom(this, this.src)" alt="0011.jpg" src="./二进制与十进制间的转换方法(图文教程)_files/9796997_3.jpg" width="102" file="http://image24.360doc.com/DownloadImg/2011/03/0814/9796997_3.jpg" status="2"> <br><br><br><font color="#ff0000"><strong>四、二进制转换为十进制：</strong><br><br></font><strong><font color="#0000ff">整数二进制用数值乘以2的幂次依次相加，小数二进制用数值乘以2的负幂次然后依次相加！</font></strong><br><font color="#0000ff"></font><br><font color="#0000ff"></font><strong><font color="#0000ff"></font></strong><font color="#0000ff"></font><font color="#006400"><strong>比如将二进制110转换为十进制：</strong></font><br><font color="#006400"><strong><font color="#000000">首先补齐位数，00000110，首位为0，则为正整数，那么</font><font color="#444444">将二进制中的三位数分别于下边对应的值相乘后相加得到的值为换算为十进制的结果</font><br></strong></font>&nbsp;<img id="aimg_35" oncgover="showmenu(this.id, false, 2)" oncg="zoom(this, this.src)" alt="2-10-110.jpg" src="./二进制与十进制间的转换方法(图文教程)_files/9796997_4.jpg" width="191" file="http://image24.360doc.com/DownloadImg/2011/03/0814/9796997_4.jpg" status="2">&nbsp;<br>&nbsp;<img id="aimg_36" oncgover="showmenu(this.id, false, 2)" oncg="zoom(this, this.src)" alt="110.jpg" src="./二进制与十进制间的转换方法(图文教程)_files/9796997_5.jpg" width="337" file="http://image24.360doc.com/DownloadImg/2011/03/0814/9796997_5.jpg" status="2"> <br><br><strong><font color="#006400">如果二进制数补足位数之后首位为1，那么其对应的整数为负，那么需要先取反然后再换算</font></strong><br>比如11111001，首位为1，那么需要先对其取反，即：-00000110<br>00000110,对应的十进制为6，因此11111001对应的十进制即为-6<br>换算公式可表示为:<br><font color="#ff0000">11111001=-00000110</font><br><font color="#ff0000">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;=-6</font><br><br><font color="#006400"><strong>如果将二进制0.110转换为十进制：</strong></font><br><font color="#006400"><strong><font color="#444444">将二进制中的三位数分别于下边对应的值相乘后相加得到的值为换算为十进制的结果</font></strong></font><br><font color="#006400"><strong>&nbsp;<img id="aimg_37" oncgover="showmenu(this.id, false, 2)" oncg="zoom(this, this.src)" alt="0.110.jpg" src="./二进制与十进制间的转换方法(图文教程)_files/9796997_6.jpg" width="231" file="http://image24.360doc.com/DownloadImg/2011/03/0814/9796997_6.jpg" status="2"> <br></strong></font><span style="position: absolute; display: none" id="attach_38" oncgover="showmenu(this.id, 0, 1)"></span><img id="aimg_38" oncgover="showmenu(this.id, false, 2)" oncg="zoom(this, this.src)" alt="001.jpg" src="./二进制与十进制间的转换方法(图文教程)_files/9796997_7.jpg" width="381" file="http://image24.360doc.com/DownloadImg/2011/03/0814/9796997_7.jpg" status="2"> <br><br><br></font><br></div>
+<div></div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none;">
+                                                                            </div>
+                                                                        </span>
+                                                                        <table>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <a name="anchordoc1" id="anchordoc1"></a>
+                                                                        <div style="height: 28px">
+                                                                            <div style="font-size: 14px; color: #797b7a; float: left;">
+                                                                                来自：<span class="name" onclick="wzhitnew(59)"><a href="http://www.360doc.com/userhome/5327079" target="_blank">csdsq</a></span>&nbsp;&gt;&nbsp;<span id="cname" onclick="wzhitnew(60)"><a href="http://www.360doc.com/userhome.aspx?userid=5327079&cid=2" target="_blank">《我的图书馆》</a></span>
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="btzctsg" id="spanfollowstatus1"><div class="gzbt1"><a onclick="gzuser(5327079);wzhitnew(61);" href="javascript:void(0)"></a></div></div>
+                                                                                <script>isfollow(5327079);</script>
+
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="ytdh1"><a onclick="doctalk();wzhitnew(107);" href="javascript:void(0)"></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="modlist lf360 list" style="padding-top: 0px;">
+                                                                                <ul>
+                                                                                    <div id="lastart"><div class="shangyp">上一篇：<a href="http://www.360doc.com/content/11/0306/11/101214_98575870.shtml" target="_blank" onclick="wzhitnew(57);"><span style="color:#7d7d7d;">[转]&nbsp;</span>安全是什么</a></div></div>
+                                                                                    <div id="nextart">下一篇：<a href="http://www.360doc.com/content/11/1108/17/149390_162833039.shtml" target="_blank" onclick="wzhitnew(58);"><span style="color:#7d7d7d;">[转]&nbsp;</span>IPTV双拨号解决方案</a></div>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <div style="padding-top: 12px;">
+                                                                            <div id="docAdBelowContent"></div>
+
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left;">
+                                                                        <div style="padding-top: 15px; width: 670px;">
+                                                                            <table style="width: 670px;" cellpadding="0" cellspacing="0">
+                                                                                <tbody>
+                                                                                    <tr>
+
+                                                                                        <td style="width: 530px;">
+                                                                                            <div class=" lf360" style="cursor: pointer" onmouseover="ChangeBtnStyle(1);" onmouseout="ChangeBtnStyle(2);">
+                                                                                                <div class="zscbt">
+                                                                                                    <a href="javascript:void(0);" onclick="SaveArt();wzhitnew(26);">
+                                                                                                        <div id="zscbtword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            转藏到我的图书馆
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div style="margin-left: 10px; cursor: pointer;" class="lf360 xhmainbox" id="sendflowerdiv" onclick="Showflowerlayer(&quot;sendedLayer1&quot;);wzhitnew(27)" onmouseover="ChangeFlowerBtnStyle(1);" onmouseout="ChangeFlowerBtnStyle(2);">
+
+                                                                                                <div id="flowimg2" class="lf360">
+                                                                                                    <div style="padding-left: 10px; padding-top: 10px;">
+                                                                                                        <img id="flowimg3" src="./二进制与十进制间的转换方法(图文教程)_files/huahuanew.gif">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div id="flowimg5" class=" lf360 xianhua">
+                                                                                                    献花(<span id="articleflowernum">8</span>)<div id="flowernumadd" class="addtionone">
+                                                                                                        +1
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+
+
+
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(3);" onmouseout="ChangeBtnStyle(4);">
+                                                                                                <div class="fxwxbt">
+
+                                                                                                    <a href="javascript:void(0);" onclick="shareWeixin();wzhitnew(64);">
+                                                                                                        <div id="fxwxword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            分享到微信
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(5);" onmouseout="ChangeBtnStyle(6);">
+                                                                                                <div class="ywzwbt">
+
+                                                                                                    <a id="ywzwa" href="https://www.baidu.com/s?wd=%e4%ba%8c%e8%bf%9b%e5%88%b6+%e5%8d%81%e8%bf%9b%e5%88%b6+%e5%b0%8f%e6%95%b0&tn=SE_hldp01010_6r0gix1f" onclick="wzhitnew(100);" target="_blank">
+                                                                                                        <div id="ywzwword" class="lf360 xianhua" style="padding-left: 44px;">
+                                                                                                            以文找文
+                                                                                                        </div>
+                                                                                                    </a>
+
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                          
+
+                                                                                        </td>
+                                                                                        <td style="vertical-align: bottom; font-size: 12px;" width="140">
+                                                                                            <div class="rt360" id="sharediv2"><table style=" vertical-align: text-bottom;" border="0" cellpadding="0" cellspacing="0"> <tbody><tr><td><div style="height:20px; width:105px;"><div style="float:left;"><span style="font-size:12px; line-height:16px; color:#959595;">分享：</span></div><div id="bdshare" class="bdsharebuttonbox bdshare_t bds_tools get-codes-bdshare share-bar-btn2 bdshare-button-style0-16" style="float:left;" data-tag="share_1" data-bd-bind="1459783493306"><span onclick="wzhitnew(31);"><a class="bds_sqq" data-cmd="sqq" title="分享给QQ好友" href="javascript:void(0);"></a></span><span onclick="wzhitnew(28);"><a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" href="javascript:void(0);"></a></span><span onclick="wzhitnew(31);"><a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" href="javascript:void(0);"></a></span></div></div></td><td width="24"><a><img style="cursor:pointer;" src="./二进制与十进制间的转换方法(图文教程)_files/tb10.gif" onclick="setTimeout(showShareLayer2, 10);wzhitnew(34);"></a><div id="fenxiangLayer1" class="fenxiang" style=" margin-left:-100px;*margin-left:-120px!important; margin-top:5px;*margin-top:16px!important;display:none;z-index:1000;"><div id="bdshare" class="bdsharebuttonbox bdshare_t bds_tools get-codes-bdshare share-bar-btn bdshare-button-style0-16" data="{}" data-bd-bind="1459783493306"><table cellpadding="0" cellspacing="0" width="108" style=" background-color:#fff; "><tbody> <tr><td width="12"></td><td height="29" onclick="wzhitnew(32);"><a class="bds_tqq" data-cmd="tqq" href="javascript:void(0);" title="分享到腾讯微博">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;腾讯微博</a></td></tr> <tr><td width="12"></td><td height="29" onclick="wzhitnew(29);"><a class="bds_renren" data-cmd="renren" href="javascript:void(0);" title="分享到人人网">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人人网</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(30);"><a class="bds_kaixin001" data-cmd="kaixin001" href="javascript:void(0);" title="分享到开心网">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开心网</a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);" onclick="showdivemail1();wzhitnew(35);"><div class="bds_py">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐给朋友</div></a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);"><div class="bds_jubao" onclick="showAlertLayer1();wzhitnew(36);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;举报</div></a></td></tr></tbody></table></div></div></td></tr></tbody></table><div id="AlertArt2" style="display:none; position:absolute;"></div><div id="SendToFriends2" style="display:none;position:absolute;z-index:1000;"></div></div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td height="10"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="lswzbox" style="padding-top: 10px;">
+                            <div>
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="330" valign="top">
+                                                <div class="lswz" style="height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    类似文章
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                                <a href="http://www.360doc.com/relevant/99222581_more.shtml" target="_blank" onclick="wzhitnew(38)">更多</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list">
+                                                            <ul>
+                                                                
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/12/0909/08/153944_235122322.shtml" target="_blank" onclick="wzhitnew(37)">十进制小数部分转换二进制数方法与步骤</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/10/0912/20/169163_53152791.shtml" target="_blank" onclick="wzhitnew(37)">十进制转二进制_百度百科</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/0222/16/4984368_95144530.shtml" target="_blank" onclick="wzhitnew(37)">十进制转二进制</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/0318/13/1764967_102252938.shtml" target="_blank" onclick="wzhitnew(37)">十进制换二进制_十进制转二进制公式</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/13/0107/14/8729276_258761393.shtml" target="_blank" onclick="wzhitnew(37)">常用的浮点数存储格式：32-bit IEEE-754...</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/09/0920/22/41391_6230543.shtml" target="_blank" onclick="wzhitnew(37)">计算机中的数制及其转换</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/0418/07/6785393_110421821.shtml" target="_blank" onclick="wzhitnew(37)">快速二进制转十进制</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/0717/13/7339888_134082429.shtml" target="_blank" onclick="wzhitnew(37)">ROS中IP后的子网掩码计算</a></span></li>
+                                                                    
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td width="330" valign="top">
+                                                <div class="lswz" style="margin-left: 9px; height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    热门推广
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list" id="dochotartabovecontent"></div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="background-color: #fafafa; width: 670px; height: 317px; margin-top: 10px;">
+                                    <div style=" padding-top:7px; padding-left:12px; "> <div style=" height:30px;"><div class="titwx3 lf360">猜你喜欢</div><div class=" rt360" style=" padding-right:18px;"><img onclick="changefiveart2(&quot;19999&quot;,&quot;19999&quot;);wzhitnew(62);" src="./二进制与十进制间的转换方法(图文教程)_files/hyz.gif" onmouseover="this.src=&quot;http://pubimage.360doc.com/wz/hyza.gif&quot;" onmouseout="this.src=&quot;http://pubimage.360doc.com/wz/hyz.gif&quot;" width="76" height="24" style="cursor:pointer;"></div></div><table cellpadding="0" cellspacing="0"><tbody><tr id="fivearttdid" style="height:138px"><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/1225/16/10170615_340030016.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/340030016_201401061552090014.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/1225/16/10170615_340030016.shtml" target="_blank">哪些行为容易得罪别人,自己却不容易...</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0316/23/5177773_361151726.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/5177773_201403230010210743.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0316/23/5177773_361151726.shtml" target="_blank">87版红楼梦插曲</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0118/12/9142406_346157720.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/9142406_201401240010070776.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0118/12/9142406_346157720.shtml" target="_blank">不懂这些注定就是穷打工命</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0108/22/9890766_343705651.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/9890766_201401150010050968.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0108/22/9890766_343705651.shtml" target="_blank">女孩心思你别猜</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/1213/13/7625776_336831370.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/336831370_201312281524350153.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/1213/13/7625776_336831370.shtml" target="_blank">想成功？先学会销售自己</a></div></td></tr><tr id="fivearttdidtwo"><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0819/23/9331441_308398501.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/308398501_201309270006290242.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0819/23/9331441_308398501.shtml" target="_blank">一剪梅【FLASH音画欣赏】</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0920/19/8888728_315828225.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/315828225_201310031342450108.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0920/19/8888728_315828225.shtml" target="_blank">胃糜烂、胃溃疡、胃炎偏方</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0411/11/9044169_277540048.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/277540048_201310011332330280.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0411/11/9044169_277540048.shtml" target="_blank">提肛运动的奇效</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0616/16/3595709_293275038.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/293275038_201310020950530077.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0616/16/3595709_293275038.shtml" target="_blank">人体各穴位位置及主治疾病大全【290...</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/12/1224/07/1079484_255944999.shtml" target="_blank"><img src="./二进制与十进制间的转换方法(图文教程)_files/255944999_201310051152430452.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/12/1224/07/1079484_255944999.shtml" target="_blank">2013年应成中国毛泽东年</a></div></td></tr></tbody></table></div>
+
+                                    <div id="adabtest" style="display: none;">
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div id="Reflction" style="padding-top: 15px; padding-left: 15px;">
+                                    <div id="360docRefTN"><div class="titwx pltit">共&nbsp;1&nbsp;条评论</div></div>
+                                    <div id="360docRefCT"><div class="wenzhang_pl_box"><table style="table-layout:fixed" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top" width="55px"><div class="wenzhang_pl_left"><a onclick="wzhitnew(41);" href="http://www.360doc.com/UserHome/22894538" target="_blank"><img width="55px" src="./二进制与十进制间的转换方法(图文教程)_files/001_50.gif"></a></div></td><td valign="top"><div class="wenzhang_pl_right" style="padding-left:8px;"><div class="name plskuai"><div class="lf360"><span class="mzbodl "><a onclick="wzhitnew(42);" href="http://www.360doc.com/UserHome/22894538" target="_blank">jinlin100</a></span><span class="timewenzi">15-04-13 14:57</span></div> <div class="rt360 pingrig"> <table cellpadding="0" cellspacing="0"><tbody><tr><td class="nochu" id="27219_up">1</td><td width="4"></td><td> <img onclick="zancai(0,27219,&#39;27219_up&#39;);wzhitnew(43);" style="cursor:pointer;" src="./二进制与十进制间的转换方法(图文教程)_files/zhanyes.gif" title="顶" width="20" height="19"></td><td> <img onclick="zancai(1,27219,&#39;27219_down&#39;);wzhitnew(44);" title="踩" src="./二进制与十进制间的转换方法(图文教程)_files/zhanno.gif" width="17" height="19" style="cursor:pointer;"></td><td width="4"></td> <td class="yeschu" id="27219_down">0</td></tr></tbody></table> </div></div><div class="pl_con "><span id="SpanRef360docCg1">有错误，负数二进制转成十进制要先减一再取反，范例中的11111001是-7而不是-6!</span></div><table cellpadding="0" cellspacing="0"><tbody><tr><td class="iehight" colspan="2"> </td></tr><tr><td><div class="revacediv" id="SubReply27219"><div class="revacextdiv">&nbsp;</div><div class="wenzhang_pl_boxsmall"><table style="table-layout:fixed" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top" width="57px"><div class="wenzhang_pl_left"><a onclick="wzhitnew(41);" href="http://www.360doc.com/UserHome/10844287" target="_blank"><img width="55px" src="./二进制与十进制间的转换方法(图文教程)_files/001_50.gif"></a></div></td><td valign="top"><div class="wenzhang_pl_rightsmall"><div class="name plskuai"><div class="lf360"><span class="mzbodl"><a onclick="wzhitnew(42);" href="http://www.360doc.com/UserHome/10844287" target="_blank">霍亚晶</a></span><span style="padding-left: 7px; color: rgb(118, 118, 118);">15-04-24 15:55</span></div>  <div class="rt360 pingrig"><table cellpadding="0" cellspacing="0"><tbody><tr><td id="27240_up" class="nochu">0</td><td width="4"> </td><td><img onclick="zancai(0,27240,&#39;27240_up&#39;);wzhitnew(43);" style="cursor:pointer;" src="./二进制与十进制间的转换方法(图文教程)_files/zhanyes.gif" title="顶"></td><td><img onclick="zancai(1,27240,&#39;27240_down&#39;);wzhitnew(44);" title="踩" src="./二进制与十进制间的转换方法(图文教程)_files/zhanno.gif" style="cursor:pointer;"></td><td width="4"></td><td class="yeschu" id="27240_down">0</td></tr></tbody></table></div></div><div class="pl_consmall "><span id="ReplySpanRef272191">谢谢<br></span></div></div></td></tr></tbody></table></div><div style=" padding-left:8px;"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="revlace"><a href="javascript:void(0);" onclick="if(document.getElementById(&#39;27219_trid&#39;).style.display==&#39;none&#39;){document.getElementById(&#39;27219_trid&#39;).style.display=&#39;&#39;;}else{document.getElementById(&#39;27219_trid&#39;).style.display=&#39;none&#39;;}">回复</a> </td> </tr><tr id="27219_trid" style="display:none;"><td><div class="huifuxt"><div style=" padding:23px 26px 7px 26px;"><textarea name="txtComments" id="textareaOfReplay27219" style=" width:100%; height:75px; border:1px solid #e7e7e7; background-color:#fff; overflow:auto;"></textarea></div><div style=" text-align:right; padding-right:30px;"><div class="huifubt2"><a id="btnOfReply27219" onclick="ReplyReflection(27219,1);return false;" href="javascript:void(0);"></a></div></div></div></td></tr><tr><td class="iehight"> </td></tr></tbody></table></div></div></td></tr></tbody></table></div></td></tr></tbody></table></div></div>
+                                    <div id="360docRefPB" align="center" style="display: none;"></div>
+                                </div>
+                                <a name="sf"></a>
+                                
+                                <div id="ReflectionPart"><div style=" height:206px; margin:0px 0px;"><div class="plbox"><div class="plmain"><div class="titwx" style=" height:23px;">发表评论：</div><div class="deluwx">您好，请&nbsp;<span><a href="javascript:void(0);" onclick="ReflectionLoginform();wzhitnew(45);">登录</a></span>&nbsp;或者&nbsp;<span><a target="_blank" href="http://www.360doc.com/register.aspx?refer=53&reurl=showweb/0/0/99222581.aspx" onclick="InsertLogData(4);wzhitnew(46);">注册</a></span>&nbsp;后再进行评论 </div><div class=" rt360" style="height: 26px;"><span class="dsfwz">社交帐号登录：</span><a class="dsftb sf1" href="javascript:void(0);" onclick="toSNSLogin(&#39;smb&#39;);wzhitnew(47);_hmt.push([&#39;_trackEvent&#39;,&#39;loginsina&#39;,&#39;clicknum&#39;,&#39;wenzhangyeremark&#39;]);" "=""></a><a class="dsftb sf2" href="javascript:void(0);" onclick="toSNSLogin(&#39;qq&#39;);wzhitnew(48);_hmt.push([&#39;_trackEvent&#39;,&#39;loginqq&#39;,&#39;clicknum&#39;,&#39;wenzhangyeremark&#39;]);" "=""></a><a class="dsftb sf3" href="javascript:void(0);" onclick="toSNSLogin(&#39;wx&#39;);wzhitnew(49);_hmt.push([&#39;_trackEvent&#39;,&#39;loginrenren&#39;,&#39;clicknum&#39;,&#39;wenzhangyeremark&#39;]);" "=""></a></div> </div></div></div></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td align="center" valign="top" width="18px"></td>
+                    <td align="left" valign="top" width="252px">
+                        
+
+
+<div style="height: 98px" id="artrightad1"></div>
+
+
+    <div id="artrightnewarticle" class="remenwz" style="height: 219px; width: 300px;"><div class="rementop"><div class="titwx" style=" padding-top:10px; padding-left:24px;">最新文章</div></div><div class="modlist3 list" style=" padding-left:15px;"><ul><li><span><a href="http://www.360doc.com/content/15/1101/23/202378_510089500.shtml" target="_blank" onclick="wzhitnew(51)">怎样的管理出成效</a></span></li><li><span><a href="http://www.360doc.com/content/15/1231/10/15027568_524372048.shtml" target="_blank" onclick="wzhitnew(51)">精华帖 | 鸡翅的做法大全</a></span></li><li><span><a href="http://www.360doc.com/content/15/0917/12/8809464_499714120.shtml" target="_blank" onclick="wzhitnew(51)">9种不同口味小炒肉</a></span></li><li><span><a href="http://www.360doc.com/content/15/1129/07/10101824_516634493.shtml" target="_blank" onclick="wzhitnew(51)">万事难不倒查询表</a></span></li><li><span><a href="http://www.360doc.com/content/15/1129/08/28118065_516642603.shtml" target="_blank" onclick="wzhitnew(51)">凉菜菜谱大全</a></span></li><li><span><a href="http://www.360doc.com/content/15/1109/06/3157924_511798510.shtml" target="_blank" onclick="wzhitnew(51)">《红楼梦》里的“一把辛酸泪”</a></span></li></ul> <div class=" rt360" style=" padding-right:23px;"><a href="http://www.360doc.com/userhome/5327079" target="_blank" onclick="wzhitnew(52);">更多</a></div></div></div>
+
+
+<div class="both" style="padding-top: 10px; height: 260px;">
+   
+    <div style="height: 10px;">
+    </div>
+</div>
+
+<div class="remenwz" id="artrighthotarticle" style="width: 300px;">
+    <div class="rementop">
+        <div class="titwx" style="padding-top: 10px; padding-left: 24px;">
+            热门文章</div>
+    </div>
+    <div class="modlist3 list" style="padding-left: 15px;">
+        <ul>
+            
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1101/23/202378_510089500.shtml" target="_blank" onclick="wzhitnew(55)">怎样的管理出成效</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1231/10/15027568_524372048.shtml" target="_blank" onclick="wzhitnew(55)">精华帖 | 鸡翅的做法大全</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/0917/12/8809464_499714120.shtml" target="_blank" onclick="wzhitnew(55)">9种不同口味小炒肉</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1129/07/10101824_516634493.shtml" target="_blank" onclick="wzhitnew(55)">万事难不倒查询表</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1129/08/28118065_516642603.shtml" target="_blank" onclick="wzhitnew(55)">凉菜菜谱大全</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1109/06/3157924_511798510.shtml" target="_blank" onclick="wzhitnew(55)">《红楼梦》里的“一把辛酸泪”</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/16/0216/22/476103_535119067.shtml" target="_blank" onclick="wzhitnew(55)">【檀历史】康熙朝的创新是怎么消失的？</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1129/18/6558695_516752555.shtml" target="_blank" onclick="wzhitnew(55)">做菜加一点它，一秒变大厨</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/16/0116/11/1111951_528344123.shtml" target="_blank" onclick="wzhitnew(55)">最欠揍的宠物 看完哭笑不得！</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1117/06/1220004_513733513.shtml" target="_blank" onclick="wzhitnew(55)">一个老员工的离职忠告</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1206/01/7858166_518222594.shtml" target="_blank" onclick="wzhitnew(55)">美女媚态</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/1208/23/156610_518880498.shtml" target="_blank" onclick="wzhitnew(55)">【家常美食惊艳】</a></span></li>
+                
+        </ul>
+        
+        <div style="padding-right: 23px;text-align: right;">
+            <a href="http://www.360doc.com/readroom.html" target="_blank" onclick="wzhitnew(56)">更多&gt;&gt;</a></div>
+        
+    </div>
+</div>
+
+<div class="both" style="padding-top: 10px;">
+    
+</div>
+<br>
+
+
+ 
+
+
+
+<script>
+    function change(pro_name, i) {
+        var pro = document.getElementById(pro_name); 
+        var pro_arr = pro.getElementsByTagName("span");
+
+        for (var m = 0; m < pro_arr.length; m++) {
+            pro_arr[m].className = "unclecked link_black";
+        }
+        pro_arr[i].className = "checked link_bai";
+
+        if (i == 1) {
+            document.getElementById("qh_ul_1").style.display = "";
+            document.getElementById("qh_ul_0").style.display = "none";
+        }
+        else if (i == 0) {
+            document.getElementById("qh_ul_1").style.display = "none";
+            document.getElementById("qh_ul_0").style.display = "";
+        }
+    }
+</script>
+
+                        <div class="both" id="divad5" style="padding-top: 11px; zoom: 1; top: 55px; left: 0px;">
+                            <div id="divad4" style="">
+                                <div>
+                                    
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+                            <div style="clear: both;" id="divad6">
+                                <div id="adfloatbaidu">
+                                    
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+
+                            <div style="clear: both;" id="divDwnloadDocApp"><div style="position: relative; width: 300px;"><div id="artweixinDiv" class="appma" style="display: none;"></div><div style="cursor: pointer;" class="appcha" onclick="closead(8);"><img src="./二进制与十进制间的转换方法(图文教程)_files/artpage_appcha.gif"></div><img onmouseover="HideShowArtWeixinDiv(1);" onmouseout="HideShowArtWeixinDiv(2);" src="./二进制与十进制间的转换方法(图文教程)_files/artpage_app.gif" width="300"></div></div>
+                            <div style="height: 75px;">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="hidden" id="docarttitle" value="%e4%ba%8c%e8%bf%9b%e5%88%b6%e4%b8%8e%e5%8d%81%e8%bf%9b%e5%88%b6%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2%e6%96%b9%e6%b3%95(%e5%9b%be%e6%96%87%e6%95%99%e7%a8%8b)">
+    <input type="hidden" id="artreadroomid" value="0">
+    <script>var asw='%e4%ba%8c%e8%bf%9b%e5%88%b6%e4%b8%8e%e5%8d%81%e8%bf%9b%e5%88%b6%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2%e6%96%b9%e6%b3%95(%e5%9b%be%e6%96%87%e6%95%99%e7%a8%8b)'</script>
+    <div id="docdiviframe"></div>
+    <script language="javascript" type="text/javascript">
+        var appName = navigator.appName.toLowerCase();
+        if (appName.indexOf("microsoft internet explorer") > -1) {
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemIE20130911.js?t=2016030701'></sc" + "ript>");
+        }
+        else {
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemOther20130911.js?t=2016030701'></sc" + "ript>");
+        }
+    </script><script type="text/javascript" src="./二进制与十进制间的转换方法(图文教程)_files/StickySystemOther20130911.js"></script>
+
+    <script>GerLookingUserInfo(1,5327079,1,0,'-1',-1,10,0);OutputSource('http%3a%2f%2f52cpp.5d6d.com%2fthread-22-1-1.html');OutputCategory(5327079,2,'%e3%80%8a%e6%88%91%e7%9a%84%e5%9b%be%e4%b9%a6%e9%a6%86%e3%80%8b');OutputLastNextArt('%3cspan+style%3d%22color%3a%237d7d7d%3b%22%3e%5b%e8%bd%ac%5d%26nbsp%3b%3c%2fspan%3e%e5%ae%89%e5%85%a8%e6%98%af%e4%bb%80%e4%b9%88','http://www.360doc.com/content/11/0306/11/101214_98575870.shtml',0);OutputLastNextArt('%3cspan+style%3d%22color%3a%237d7d7d%3b%22%3e%5b%e8%bd%ac%5d%26nbsp%3b%3c%2fspan%3eIPTV%e5%8f%8c%e6%8b%a8%e5%8f%b7%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88','http://www.360doc.com/content/11/1108/17/149390_162833039.shtml',1);</script>
+
+
+<div id="goTop2" style="left: 1157px; display: block;"><div id="goTop"><a href="http://www.360doc.com/content/11/0308/14/5327079_99222581.shtml#" id="go_top"></a></div><div id="goTop1"><a href="javascript:void(0);" id="go_top1"></a></div><div></div></div></body></html>

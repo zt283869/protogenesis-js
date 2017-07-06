@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<style>
+			
+			* { margin: 0; padding: 0;line-height: 30px;}
+			ul { margin: 20px auto; width: 300px; border: 1px solid #aaa; padding: 20px;}
+			li { list-style: none;   border-bottom: 1px dashed #aaa;}
+			div{
+				position:absolute;
+				left:100px;
+				top:50px;
+				border:1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div >
+		<ul id="list">
+			<li>轻轻的我走了，正如我轻轻的来</li>
+			<li>轻轻的我来了，正如我轻轻的走</li>
+			<li>放假去哪里玩？？？</li>
+			<li>放假去好好学习</li>
+			<li>放假去new一个对象</li>
+		</ul>
+		<input type="button" value="往后添加" id="btn"/>
+		<input type="button" value="往前添加" id="btn1"/>
+		</div>
+		<script src="base.js"></script>
+		<script>
+			var oList = getId("list");
+			var oBtn = getId("btn");
+			var oBtn1 = getId("btn1");
+			var _Li = oList.getElementsByTagName("li");
+			oBtn.onclick = function(){
+				var oLi = document.createElement("li");  //创建一个节点元素
+				oLi.innerHTML = "我是添加进来的";  // 给元素节点加属性
+				oLi.style.color = "#f00";
+				oLi.onclick = function(){   // 给元素节点加事件
+		//			oList.removeChild(this);
+					this.remove();
+				}
+				oList.appendChild(oLi);  // appendChild添加到子元素的最后面
+			}
+			oBtn1.onclick = function(){
+				var oLi = document.createElement("li");
+				oLi.innerHTML = "我是添加进来的";
+				oLi.style.color = "#0f0";
+				oLi.onclick = function(){
+					alert(this.innerHTML);
+				}
+				oList.insertBefore(oLi,_Li[0]);  // appendChild添加到子元素的最前面
+			}
+			//
+				var oA = document.createElement("aaa");  // 可以创建一些W3C标准里不存在的标签节点
+				oA.innerHTML = "1111";
+				oA.title = "222";
+				document.getElementsByTagName("body")[0].appendChild(oA);
+		</script>
+	</body>
+</html>

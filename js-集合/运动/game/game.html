@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			div{margin: 0 auto;}
+			.container{width: 800px;height: 400px;margin-top: 50px;border: 1px solid #666;position: relative;}
+			.circle{width: 50px;height: 50px;background: red;border-radius: 50px;left: 0;top: 0;position: absolute;}
+			.bar{width: 150px;height: 10px;background: orange;position: absolute;left: 0;bottom: 0;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="circle"></div>
+			<div class="bar"></div>
+		</div>
+		<input type="button" value="开始游戏" id="btn"/>
+		得分：<span>0</span>
+		<script>
+			var bar = document.getElementsByClassName("bar")[0];
+			var container = document.getElementsByClassName("container")[0];
+			var circle = document.getElementsByClassName("circle")[0];
+			var w = container.clientWidth;
+			var h = container.clientHeight;
+			var btn = document.getElementById("btn");
+			var sX = 5;
+			var sY = 10;
+			var divW = circle.clientWidth;
+			var divH = circle.clientHeight;
+			var timer = null;
+			var score = document.getElementsByTagName("span")[0];
+			var i=0;
+			//弹球
+			btn.onclick = function(){
+				timer = setInterval(function(){
+//					sY+=1;
+					var l = circle.offsetLeft+sX;
+					var t = circle.offsetTop+sY;
+					
+					if(l>=w-divW){
+						sX*=-1;
+						l=w-divW;
+					}else if(l<=0){
+						sX*=-1;
+						l=0;
+					}
+					
+					if(t>=h-divH){
+						sY*=-1;
+						t=h-divH;
+					}else if(t<=0){
+						sY*=-1;
+						t=0;
+					}
+					
+					
+					circle.style.left = l+"px";
+					circle.style.top = t+"px";
+					if(t>=h-divH-bar.offsetHeight){
+						var circleL = circle.offsetLeft+divW/2;
+						if(circleL>=bar.offsetLeft&&circleL<=(bar.offsetLeft+bar.clientWidth)){
+							sY*=-1;
+							i++;
+							score.innerHTML = i;
+						}else{
+							alert("Game over!");
+							circle.style.left = "0px";
+							circle.style.top = "0px";
+							bar.style.left = "0px";
+							clearInterval(timer);
+							i=0;
+							score.innerHTML = i;
+						}
+						
+					}
+					
+				},30)
+			}
+			//滑板的移动
+			document.onkeydown = function(e){
+				var evt = e||event;
+//				alert(e.keyCode);    left  37   right  39
+				if(evt.keyCode==37){
+					if(bar.offsetLeft>0){
+						bar.style.left = bar.offsetLeft-10+"px";
+					}
+				}
+				if(evt.keyCode==39){
+					if(bar.offsetLeft<650){
+						bar.style.left = bar.offsetLeft+10+"px";
+					}
+				}
+			}
+		//	console.log();
+		</script>
+	</body>
+</html>

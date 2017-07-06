@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+		<style>
+			ul,li{
+				list-style-type:none;
+			}
+			ul li{
+				width:560px;
+				height:300px;
+				position:relative;
+				overflow:hidden;
+				float:left;
+				margin:20px;
+			}
+			#pop{
+				position:absolute;
+				width:100%;
+				height:100%;
+				background:rgba(0,0,0,0.5);
+				left:0;
+				top:100%;
+				font-size:100px;
+				color:#fff;
+				text-align:center;
+				transition: all 0.5s ease-in-out;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<img src="images/1a.jpg"/>
+				<div id="pop">
+					<p>龙猫</p>
+				</div>
+			</li>
+			<li>
+				<img src="images/2a.jpg"/>
+				<div id="pop">
+					<p>宫崎骏</p>
+				</div>
+			</li>
+			<li>
+				<img src="images/3a.jpg"/>
+				<div id="pop">
+					<p>宫崎骏1</p>
+				</div>
+			</li>
+		</ul>
+		<script src="base.js"></script>	
+		<script>
+			var oLi = document.getElementsByTagName("li");
+			var oPop = document.getElementById("pop");
+		//	oDiv[0].onmouseover = function(){
+			//	oPop.style.display = "block";
+		//		oPop.style.top = "0px";
+		//	}
+		//	oDiv[0].onmouseout = function(){
+			//	oPop.style.display = "none";
+		//		oPop.style.top = "100%";
+		//	}
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].onmouseover = function(){
+		//			oPop.style.top = "0px";
+					this.getElementsByTagName("div")[0].style.top = "0px";
+				}
+				oLi[i].onmouseout = function(){
+		//			oPop.style.top = "100%";
+					this.getElementsByTagName("div")[0].style.top = "100%";
+				}
+			}
+		</script>
+	</body>
+</html>

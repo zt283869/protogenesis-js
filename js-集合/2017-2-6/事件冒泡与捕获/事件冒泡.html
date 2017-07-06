@@ -1,0 +1,70 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+<style>
+	#one,#two,#three{background-color:rgba(0,0,0,0.1);padding:50px;text-align:center;margin-bottom:10px;}
+	body{padding:100px 0;}
+</style>
+</head>
+<body>
+	<div id="one">
+		one
+		<div id="two">
+			two
+		</div>
+		<div id="three">
+			three
+		</div>
+	</div>
+	<script src="base.js"></script>
+	<script>
+		var _one = getId("one");
+		var _two = getId("two");
+		var _three = getId("three");
+		var _body = document.getElementsByTagName("body")[0];
+		
+	//	_one.onclick = function(){
+	//		alert("one");
+	//	}
+	//	_two.onclick = function(evt){
+	//		var e = evt||event;
+	//		if(e.stopPropagation){
+	//			e.stopPropagation();
+	//		}else{
+	//			event.cancelBubble=true;
+	//		}
+			
+	//		alert("two");
+			
+	//	}
+	//	_three.onclick = function(evt){
+	//		var e = evt||event;
+	//		if(e.stopPropagation){
+	//			e.stopPropagation();
+	//		}else{
+	//			event.cancelBubble=true;
+	//		}
+	//		alert("three");
+	//	}
+	//	_body.onclick = function(){
+	//		alert("body");
+	//	}
+		
+	//	_two.onclick = function(){
+	//		alert(1);
+	//	}
+	//	_two.onclick = function(){
+	//		alert(2);
+	//	}
+		_two.addEventListener("click",aa);
+	//	_one.addEventListener("click",function(){alert("one")},true);
+		
+		_two.removeEventListener("click",aa);
+		
+		function  aa(){
+			alert(1);
+		}
+	//	_two.addEventListener("click",function(){alert("111")});
+	</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+		<style>
+			.list2 li{
+				list-style-type:none;
+				float:left;
+				width:40px;
+				height:40px;
+				background:#666;
+				color:#fff;
+				margin-left:20px;
+				text-align:center;
+				line-height:40px;
+				border-radius:50%;
+				font-size:25px;
+				cursor:pointer;
+			}
+			.list2 .active{
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list1">
+			<li>敬业福</li>
+			<li>爱国福</li>
+			<li>和谐福</li>
+			<li>友善福</li>
+			<li>富强福</li>
+			<li>万能福</li>
+		</ul>
+		<ul class="list1">
+			<li>敬业福</li>
+			<li>爱国福</li>
+			<li>和谐福</li>
+			<li>友善福</li>
+			<li>富强福</li>
+			<li>万能福</li>
+		</ul>
+		
+		<img src="images/1a.jpg" id="Img"/>
+		<ul class="list2">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<input type="button" id="btn" value="zhuce"/>
+		<script src="base.js"></script>	
+		<script>
+			oLi = document.getElementsByClassName("list2")[0].getElementsByTagName("li");
+		//	循环加事件
+		//	this   事件是在哪个元素上触发的，this就指向谁
+		/*	for(var i=0;i<oLi.length;i++){
+				oLi[i].onclick = function(){
+					this.innerHTML = "666";
+			//		console.log(i);
+			//		oLi[i].innerHTML = "666";
+			//		console.log(1)
+				}
+			}
+			getId("btn").onclick = function(){
+				console.log(this);
+			}
+			var o = {}
+			o.name =  "aaa";
+			o.age = 20;*/
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].aa = i; //给当前的节点对象添加一个属性把i值存进去
+				oLi[i].onmouseover = function(){
+					console.log(this.aa);  // 使用节点对象的属性获取存的i值
+					for(var j=0;j<oLi.length;j++){  // 将所有的active去掉
+						oLi[j].className = "";
+					}
+					this.className = "active";  // 给当前的li节点加active
+					getId("Img").src = "images/"+(this.aa+1)+"a.jpg";
+				}
+			}
+		</script>
+	</body>
+</html>

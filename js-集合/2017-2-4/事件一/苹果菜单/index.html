@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.menu{
+				height: 200px;
+				width: 500px;
+				position: relative;
+				margin: 0 auto;
+			}
+			.menu div{
+				position: absolute;
+				bottom: 0;
+				width: 100px;
+				height: 50px;
+				border-radius: 10px 10px 0 0;
+			}
+			.menu div:nth-child(1){
+				left: 0;
+				background: rgba(0,0,0,0.1);
+			}
+			.menu div:nth-child(2){
+				left: 100px;
+				background: rgba(0,0,0,0.2);
+			}
+			.menu div:nth-child(3){
+				left: 200px;
+				background: rgba(0,0,0,0.3);
+			}
+			.menu div:nth-child(4){
+				left: 300px;
+				background: rgba(0,0,0,0.4);
+			}
+			.menu div:nth-child(5){
+				left: 400px;
+				background: rgba(0,0,0,0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="menu">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<script>
+			var oHeight = [50,50,50,50,50];
+			var oWrap = document.getElementsByClassName("menu")[0];
+			var oItem = oWrap.getElementsByTagName("div");
+			//进入页面设置各个高度
+			for(var i=0;i<oItem.length;i++){
+				oItem[i].style.height = oHeight[i]+"px";
+			}
+			//根据鼠标移动改变高度
+			oWrap.onmousemove = function(ev){
+				var e = ev||event;
+				for(var i=0;i<oItem.length;i++){
+					var x = oWrap.offsetLeft+oItem[i].offsetLeft+oItem[i].offsetWidth/2;
+					var s = Math.abs(e.clientX - x);
+				//	0 300     200	
+					oItem[i].style.height = 200 - Math.min(s/2,150)+"px";
+				}
+			}
+			// 离开设置各个高度
+			oWrap.onmouseout = function(){
+				for(var i=0;i<oItem.length;i++){
+					oItem[i].style.height = oHeight[i]+"px";
+				}
+			}
+		</script>
+	</body>
+</html>

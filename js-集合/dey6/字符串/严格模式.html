@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date对象</title>
+
+</head>
+<body>
+	<script>
+	//	
+		
+		a = 20;
+	//	console.log(a);
+		function aa(){
+	//		"use strict"; //严格模式
+			var b = 20;
+			console.log(b);
+		}
+	//	aa();
+	//	数组的新方法
+		var a = [232,34,565,23,45,3,123,12,565];
+	//	a.forEach(function(x,y,z){
+	//		console.log(x);
+	//		console.log(y);
+	//		console.log(z);
+	//	})    // x 当前的值，下标，数组本身
+	//	map映射
+		var b = a.map(function(x,y,z){
+	//		console.log(x);
+	//		console.log(y);
+	//		console.log(z);
+			return x+2;
+		});
+	//	console.log(b);
+	//	filter 过滤,筛选
+		var c = a.filter(function(x){
+			return x>100;
+		})
+	//	console.log(c);
+	//	判断  some只有要就行
+		var d = a.some(function(x){
+			return x>100;
+		})
+	//	console.log(d);
+	//	必须每一个都得满足
+		var d = a.every(function(x){
+			return x>100;
+		})
+	//	console.log(d);
+	//	indexOf/lastIndexOf      找到返回下标值，返回-1值，第二参数从哪个位置开始寻找
+		var e = a.indexOf(565,2);
+	//	console.log(e);
+	//	
+		var f = a.reduce(function(x,y,z,w){
+			console.log(x);
+			console.log(y);
+			console.log(z);
+			console.log(w);
+		})
+	</script>
+</body>
+</html>
+</html>

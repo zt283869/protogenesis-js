@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var reg = /^a/;  //开头^
+			var str = "tbcde";
+			console.log(reg.test(str));
+			var reg2 = /s$/; //结尾$
+			var str2 = "asds";
+			console.log(reg2.test(str));
+			
+			var reg3 = /^as$/;
+			var str3 = "a01233awdrttsqqwefret";
+			console.log(reg3.test(str3));
+			
+			//范围   []
+			var reg4 = /^a[0-9a-z_]s$/;
+			console.log(reg4.test(str3));
+			
+			var reg5 = /^a[0-9]a$/;
+			console.log(reg5.test(str3));
+			
+			var reg6 = /^a[0-9a-zA-Z_]{6,12}s$/;
+			console.log(reg6.test("a2er_grws"));
+			
+			
+			//  ^开头  $结尾  []匹配字符，可以写范围   {}数量控制
+			var reg7 = /^a(com|cn)s$/;
+			console.log(reg7.test("acns"));
+		</script>
+	</body>
+</html>

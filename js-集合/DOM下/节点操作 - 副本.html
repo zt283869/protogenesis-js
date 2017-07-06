@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<select id="sel">
+		
+	</select>
+	<ul id="list">
+		<li>
+			<img src="images/1a.jpg"/>
+			<h1>龙猫</h1>
+		</li>
+	</ul>
+<script>
+	var lolServer = ["艾欧尼亚","班德尔城","祖安"];
+	var oSel = document.getElementById("sel");
+	var oList = document.getElementById("list");
+	for(var i=0;i<lolServer.length;i++){
+		var oOption = document.createElement("option");//创建节点  
+		oOption.innerHTML = lolServer[i];
+		oOption.value = i;
+		oSel.appendChild(oOption);
+	}
+	for(var i=0;i<10;i++){
+		var oLi = document.createElement("li");
+		oLi.innerHTML = "<img src='images/1a.jpg'/><h1>龙猫</h1>";
+		oLi.onclick = function(){
+			var res = confirm("是否删除此元素");
+			if(res){
+				this.remove();
+	//			oList.removeChild(this);
+			}
+		}
+		oList.appendChild(oLi);
+	}
+	
+	//	创建节点对象 document.createElement 
+	//	给节点添加属性，添加事件
+	//	把节点添加到页面上(appendChild,insertBefore)
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+		<style>
+			.list2 li{
+				list-style-type:none;
+				float:left;
+				width:40px;
+				height:40px;
+				background:#666;
+				color:#fff;
+				margin-left:20px;
+				text-align:center;
+				line-height:40px;
+				border-radius:50%;
+				font-size:25px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul class="list1">
+			<li>敬业福</li>
+			<li>爱国福</li>
+			<li>和谐福</li>
+			<li>友善福</li>
+			<li>富强福</li>
+			<li>万能福</li>
+		</ul>
+		<ul class="list1">
+			<li>敬业福</li>
+			<li>爱国福</li>
+			<li>和谐福</li>
+			<li>友善福</li>
+			<li>富强福</li>
+			<li>万能福</li>
+		</ul>
+		<ul class="list2">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script src="base.js"></script>	
+		<script>
+		
+			var oLi = document.getElementsByTagName("li");
+			console.log(oLi);
+			var oUl = document.getElementsByClassName("list2");
+			
+			var _li = oUl[0].getElementsByTagName("li");//从oul[0]这个节点对象开始往下寻找
+			console.log(_li);
+		</script>
+	</body>
+</html>

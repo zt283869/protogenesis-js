@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>javascript</title>
+		<link />
+	</head>
+	<body>
+		
+		<script>
+			var str1 = "10";
+			var num1 = 20;
+			var str2 = "Hello";
+			var str3 = "World";
+		//	document.write(str1+num1); //连接,拼接  + 数字的加减  连接字符
+		//	document.write(str2+"World");
+			document.write(str1-2+"<br/>");
+		//	除了加法之外，减乘除都会把字符串的数字转成数字进行数字计算
+			document.write(20+10+5+20+"30"+"<br/>");
+			document.write(20+"10"+(5+20)+"30"+"<br/>");
+		//	有一个字符串类型的数字  "2017"*1
+		//	- * / 讲一个字符串转化成数字    2017+"" 
+			var s1 = "ja";
+			var s2 = "script";
+			alert(s1+"va"+s2);
+			var imgSrc1 = "images/1a.jpg";
+			var imgSrc2 = "images/2a.jpg";
+			var imgSrc3 = "images/3a.jpg";
+			var _ul = "<ul><li><img src='"+imgSrc1
+						+"'/></li><li><img src='"+imgSrc2
+						+"'/></li><li><img src='"+imgSrc3
+						+"'/></li></ul>";
+			document.write(_ul);
+			
+			var _id = "container";
+			var href1 = "http://www.baidu.com";
+			var href2 = "http://www.google.com";
+			document.write('<div id="'+_id
+			+'"><ul><li><a href="'+href1
+			+'">百度</a></li><li><a href="'+href2
+			+'">谷歌</a></li></ul></div>');
+		</script>
+	</body>
+</html>

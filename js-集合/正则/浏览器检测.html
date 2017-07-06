@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var userAgent = navigator.userAgent;
+			console.log(userAgent);
+			if(userAgent.search(/chrome/gi)!=-1){ //谷歌浏览器
+				alert("谷歌浏览器！");
+			}else if(userAgent.search(/firefox/gi)!=-1){//火狐浏览器
+				alert("火狐浏览器!");
+			}else if(userAgent.search(/msie/gi)!=-1){ //ie浏览器及版本
+				var n = userAgent.split(/msie/gi)[1].split(";")[0].replace(/\s/,"");
+				alert("ie"+n);
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

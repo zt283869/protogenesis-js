@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>javascript</title>
+		<link />
+	</head>
+	<body>		
+		<script>
+	//	类型转换  number string  boolean  undefined null object
+	//	NaN   not a number 特殊的Number类型，不代表任何值
+		var str = "234awdf";
+		var bool = false;
+		var o = {};
+	//	alert(typeof str);
+	//	alert(Number(str));  // 能转成纯数字转化成数字，转不成的NaN 布尔对应 1 0  NULL 0
+	//	parseInt()  parseFloat()
+	//	alert(parseInt(str));   // parseInt()  可以进行类型转换  把遇到第一个不是数字之前的转成数字
+		
+	//	string
+	//	alert(String(10));
+	//	alert(String(o)); // object转成字符串 [object Object]
+		
+	//	布尔值	 Boolean
+	//	alert(Boolean(-250));  // 除了0都是true
+	//	alert(Boolean(" "));  // 除了空字符是false
+	//	alert(Boolean(null)); // null和undefined false
+	//	alert(Boolean(o));  // 所有的object转成布尔值都是true
+		
+	//	NaN  是一个number类型，自己不等于自己   
+		alert(NaN==NaN);
+		</script>
+	</body>
+</html>

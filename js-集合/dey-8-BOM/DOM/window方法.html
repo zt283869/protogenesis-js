@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+	<!--	<meta http-equiv="refresh" content="2;url=http://www.baidu.com" />  -->
+		<style>
+			p{
+				margin: 50px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="###" id="aa">点击关闭</a>
+		<a href="###" id="bb">点击打开一个新窗口</a>
+		<p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p>
+		<script src="base.js"></script>	
+		<script>
+			getId("aa").onclick = function(){
+		//		window.close();
+				alert(1);
+			}
+			getId("aa").onclick = function(){
+		//		window.close();
+				alert(2);
+			}
+			getId("bb").onclick = function(){
+				window.open();
+			}
+		//	onresize 窗口大小变化事件	
+			window.onresize = function(){
+				console.log("窗口大小发生了变化")
+			}
+		//	onscroll  滚动事件
+			window.onscroll = function(){
+				console.log("页面发生了滚动")
+			}
+		//	onload  页面加载完成执行   页面完全加载完成，包括图片，视频，音频
+		//	window.onload = function(){
+		//		
+		//	}
+		</script>
+		<script>
+		//	一个js，只能出现一个window.onload
+			window.onload = function(){
+		//		alert("111111");
+				function aa(){
+					
+				}
+				getId("aa").innerHTML = "1111";
+			}
+			window.onload = function(){
+		//		alert("22");
+				function aa(){
+					
+				}
+				getId("aa").innerHTML = "1111";
+			}
+		</script>
+	</body>
+</html>

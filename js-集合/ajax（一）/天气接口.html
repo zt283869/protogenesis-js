@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="txt"/>
+		<input type="button" id="btn" value="查询" />
+		<ul id="list">
+			
+		</ul>
+		<script>
+			var btn = document.getElementById("btn");
+			var txt = document.getElementById("txt");
+			var oList = document.getElementById("list");
+		//	http://wthrcdn.etouch.cn/weather_mini?city=	
+			btn.onclick = function(){
+				var oText = txt.value;
+				console.log(oText);
+				
+				var xhr = new XMLHttpRequest();
+				var url = "http://wthrcdn.etouch.cn/weather_mini?city="+oText;
+				xhr.open("GET",url);
+				xhr.send();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						console.log(xhr.responseText);
+						var  o = eval("("+xhr.responseText+")");
+						console.log(o);
+						oList.innerHTML = "<p>"+o.data.ganmao+"</p><p>"+o.data.wendu+"</p>"
+					}	
+				}
+			}
+		</script>
+	</body>
+</html>

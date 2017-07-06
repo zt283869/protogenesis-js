@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分页</title>
+		<style>
+			*{margin: 0;padding: 0;font-family: "微软雅黑";}
+			div{margin: 0 auto;}
+			ul,li{list-style-type: none;}
+			.container,.pages{margin: 0 auto;padding: 5px;width: 800px;border: 1px solid #666;overflow: hidden;}
+			li{padding: 5px 0;}
+			ul.container li{height: 85px;}
+			.pages li{width: 30px;line-height: 20px;border: 1px solid #666;float: left;margin-left: 5px;text-align: center;}
+			.pages li.active{border: 1px solid red;}
+		</style>
+	</head>
+	<body>
+		<marquee direction="left">我是滚动的文字</marquee>
+		<ul class="pages">
+			<li class="active"><a href="###">1</a></li>
+			<li><a href="###">2</a></li>
+			<li><a href="###">3</a></li>
+			<li><a href="###">4</a></li>
+			<li><a href="###">5</a></li>
+		</ul>
+		<script src="ajax.js"></script>
+		<script>
+			var oUl = document.getElementsByClassName("container")[0];
+			var pages = document.getElementsByClassName("pages")[0];
+			var pageLi = pages.getElementsByTagName("li"); //0-5
+						
+			
+			//分页按钮的点击
+			for(var i=0;i<pageLi.length;i++){
+				pageLi[i].index = i;
+				pageLi[i].onclick = function(){
+					for(var j=0;j<pageLi.length;j++){
+						pageLi[j].className = "";
+					}
+					this.className = "active";
+					var m = this.index
+					ajax("lol.json",function(data){
+						var res = JSON.parse(data);
+						console.log(m);
+					})
+				}
+			}
+		</script>
+	</body>
+</html>

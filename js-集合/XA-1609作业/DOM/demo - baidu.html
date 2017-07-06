@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">DOM</title>
+		<style>
+			.login{
+				position:absolute;
+				right:170px;
+				top:30px;
+			}
+			.pop{
+				position:absolute;
+				left:50%;
+				top:50%;
+				margin-left:-200px;
+				margin-top:-224px;
+				display:none;
+				z-index:9999;
+			}
+			.close{
+				position:absolute;
+				top:9px;
+				right:16px;
+				color:gray;
+				font-size:25px;
+				cursor:pointer;
+			}
+			.bg{
+				position:absolute;
+				width:100%;
+				height:100%;
+				background:rgba(0,0,0,0.3);
+				left:0;
+				top:0;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/baiduIndex.png"/>
+		<a class="login" href="###">登录</a>
+		
+		<div class="pop">
+			<img src="images/baiduLogin.png"/>
+			<span class="close">&times;</span>
+		</div>
+		<div class="bg"></div>
+		<script src="base.js"></script>	
+		<script>
+			var pop = document.getElementsByClassName("pop")[0];
+			var bg = document.getElementsByClassName("bg")[0];
+			document.getElementsByClassName("login")[0].onclick = function(){
+				pop.style.display = "block";
+				bg.style.display = "block";
+			}
+			document.getElementsByClassName("close")[0].onclick = function(){
+				pop.style.display = "none";
+				bg.style.display = "none";
+			}
+		</script>
+	</body>
+</html>

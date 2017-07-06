@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+	<script>
+	//	
+		var n = 6;
+		for(var i=1;i<=n;i++){
+			for(var j=1;j<=i;j++){
+				document.write("☆");
+			}
+			document.write("<br/>");
+		}
+		
+	//	
+	//	    *       i=1    j=5            >n-i 
+	//     **       i=2    j=4,5          3
+	//	  ***       i=3    j=3,4,5        2
+	//	 ****       i=4    j=2,3,4,5      1
+	//	*****       i=5    j=1,2,3,4,5    0
+		for(var i=1;i<=n;i++){
+			for(var j=1;j<=n;j++){
+				if(j<=n-i){
+					document.write("&nbsp;");
+				}else{
+					document.write("☆");
+				}
+			}
+			document.write("<br/>");
+		}
+	//	    *        i=1      j=5                n-i=4    n+i-1 5         
+    //     ***       i=2      j=4,5,6                3          6
+	//	  *****      i=3      j=3,4,5,6,7            2          7
+	//	 *******     i=4      j=2,3,4,5,6,7,8        1          8 
+	//	*********    i=5      j=1,2,3,4,5,6,7,8,9    0          9
+		for(var i=1;i<=n;i++){
+			for(var j=1;j<=n+i-1;j++){
+				if(j<=n-i){
+					document.write("&nbsp;");
+				}else{
+					document.write("☆");
+				}
+			}
+			document.write("<br/>");
+		}
+		for(var i=n-1;i>=1;i--){
+			for(var j=1;j<=n+i-1;j++){
+				if(j<=n-i){
+					document.write("&nbsp;");
+				}else{
+					document.write("☆");
+				}
+			}
+			document.write("<br/>");
+		}
+	//	梯形	
+		document.write("<br/>");
+		for(var i=3;i<=n;i++){
+			for(var j=1;j<=n+i-1;j++){
+				if(j<=n-i){
+					document.write("&nbsp;");
+				}else{
+					document.write("☆");
+				}
+			}
+			document.write("<br/>");
+		}
+		
+	//	大宝剑
+	/*	       *
+			  ***
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+			 *****
+		   ********* 
+		  ***********
+			 *****
+			 *****
+			 *****
+              ***
+		*/	  
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin: 0; padding: 0;}
+		div{margin:0 auto;}
+		ul,li{list-style-type:none;}
+		.wrap{width:1000px;margin-top:20px;}
+		.navbarwrap{width:100%;background:#666;height:50px;}
+		ul.myul li{padding: 10px 0;}
+		ul.navbar{width:1000px;height:50px;background:#666;margin:0 auto;}
+		ul.navbar > li{float:left;padding:0 25px;line-height:50px;cursor:pointer;
+		color:#fff;font-size:25px;font-weight:bold;position:relative;}
+		ul.navbar > li:hover{background:#888;}
+		.navbarlist{position:absolute;left:0;background:#666;width:100%;text-align:center;display:none;}
+		.navbarlist > li:hover{background:#888;}
+		.back{width:20px;padding:5px;background:#bbb;cursor:pointer;position:fixed;right:10px;bottom:10px;}
+    </style>
+</head>
+<body>
+	<div class="navbarwrap">
+		<ul class="navbar">
+			<li class="navbarLi">
+				HOME
+				<ul class="navbarlist">
+					<li>AAA</li>
+					<li>BBB</li>
+					<li>CCC</li>
+				</ul>
+			</li>
+			<li  class="navbarLi">
+				HTML
+				<ul class="navbarlist">
+					<li>AAA</li>
+					<li>BBB</li>
+					<li>CCC</li>
+				</ul>
+			</li>
+			<li  class="navbarLi">
+				CSS
+				<ul class="navbarlist">
+					<li>AAA</li>
+					<li>BBB</li>
+					<li>CCC</li>
+				</ul>
+			</li>
+			<li  class="navbarLi">
+				JAVASCRIPT
+				<ul class="navbarlist">
+					<li>AAA</li>
+					<li>BBB</li>
+					<li>CCC</li>
+				</ul>
+			</li>
+		</ul>
+	<div>	
+	<div class="wrap">	
+		<ul class="myul">
+			<li><a>我是Li1</a></li>
+			<li><a>我是Li2</a></li>
+			<li><a>我是Li3</a></li>
+			<li><a>我是Li4</a></li>
+		</ul>
+	</div>
+	<script>
+	//	导航条鼠标移上效果
+		var navbar = document.getElementsByClassName("navbar")[0];
+		var navbarLi = navbar.getElementsByClassName("navbarLi");
+		for(var i=0;i<navbarLi.length;i++){
+			navbarLi[i].onmouseover = function(){
+				this.getElementsByTagName("ul")[0].style.display = "block";
+			}
+			navbarLi[i].onmouseout = function(){
+				this.getElementsByTagName("ul")[0].style.display = "none";
+			}
+		}
+		
+	
+	</script>
+</body>
+</html>

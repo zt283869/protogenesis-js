@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BOM</title>
+		<style>
+			.aa.active,.bb.active{
+				color:red;
+			}		
+		</style>
+	</head>
+	<body>
+		<ul class="aa">
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ul>
+		<ul class="bb">
+			<li>aa</li>
+			<li>bb</li>
+			<li>cc</li>
+			<li>dd</li>
+		</ul>
+		<script src="base.js"></script>	
+		<script>
+			//var oUl = document.getElementsByClassName("aa");
+			//var _ul = document.getElementsByTagName("ul");
+			//console.log(_ul);
+			//console.log(oUl);
+			
+			function getClass(str){
+				var all = document.getElementsByTagName("*");
+			//	console.log(all);
+				var result = [];
+				for(var i=0;i<all.length;i++){
+					if(all[i].className==str){
+						result.push(all[i]);
+					}
+				}
+				return result;
+			}
+			console.log(getClass("aa"));
+			console.log(getClass("bb"));
+			console.log(getClass("cc"));
+		</script>
+	</body>
+</html>

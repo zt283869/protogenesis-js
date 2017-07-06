@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="txt1"/>
+		<input type="text" id="txt2"/>
+		<input type="button" id="btn" value="注册"/>
+		<script src="ajax.js"></script>
+		<script>
+			
+			var btn = document.getElementById("btn");
+			ajax("json/222.json",function(res){
+				console.log(res);
+			})
+			
+			//注册
+			btn.onclick = function(){
+				var txt1 = document.getElementById("txt1");
+				var txt2 = document.getElementById("txt2");
+				var url = "http://10.35.162.48/php/login/reg.php?name="+txt1.value+"&pwd="+txt2.value;
+				ajax(url,function(a){
+					console.log(a);
+				})
+			}
+		</script>
+	</body>
+</html>

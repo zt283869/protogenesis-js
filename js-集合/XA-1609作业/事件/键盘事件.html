@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#aaa{
+				width:200px;
+				height:100px;
+				background:rgba(0,0,0,0.2);
+				position:absolute;
+				left:100px;
+				top:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="txt"/>
+		<div id="aaa"></div>
+		<script src="base.js"></script>
+		<script>
+			getId("txt").onkeydown = function(e){
+				var evt = e||window.event;
+				console.log(evt);
+				console.log(evt.keyCode);
+			}
+			document.getElementsByTagName("body")[0].onkeydown = function(e){
+				var evt = e||window.event;
+				var oDiv = getId("aaa");
+				if(evt.keyCode==13&&evt.ctrlKey&&evt.altKey){
+					console.log("同时按下ctrl,alt和回车");
+				}
+				console.log(evt.keyCode);
+				switch(evt.keyCode){
+					case 37:
+					case 65:
+						oDiv.style.left = (parseInt(getStyle(oDiv,"left"))-2)+"px";
+						break;
+					case 38:
+					case 87:
+						oDiv.style.top = (parseInt(getStyle(oDiv,"top"))-2)+"px";
+						break;
+					case 39:
+					case 68:
+						oDiv.style.left = (parseInt(getStyle(oDiv,"left"))+2)+"px";
+						break;
+					case 40:
+					case 83:
+						oDiv.style.top = (parseInt(getStyle(oDiv,"top"))+2)+"px";
+						break;	
+					default:
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

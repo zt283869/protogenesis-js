@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#d1{
+				width:100px;
+				height:100px;
+				background:#666;
+				position:absolute;
+				left:0;
+				top:0;
+			}
+			#list{
+				width:200px;
+				height:200px;
+				border:1px solid #666;
+				overflow:auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul id="list">
+			
+		</ul>
+		<input type="text" id="txt"/>
+		<input type="button" id="btn" value="发表"/>
+		<script src="base.js"></script>
+		<script>
+			document.onkeydown = function(evt){
+				var e = evt||event;
+				var oDiv = document.getElementById("d1");
+				console.log(e);
+		//		if(e.keyCode==17&&e.keyCode==13){
+		//			alert(1);
+		//		}
+				if(e.ctrlKey&&e.keyCode==13){
+					console.log("crtl和回车同时按下");
+				}
+			}
+			var oList= document.getElementById("list");
+			var oTxt= document.getElementById("txt");
+			var oBtn= document.getElementById("btn");
+			//点击发表留言
+			oBtn.onclick = function(){
+				sendMsg();
+			}
+			//ctrl+enter 组合键发表留言
+			document.onkeydown = function(evt){
+				var e  = evt||event;
+				if(e.ctrlKey&&e.keyCode==13){
+					sendMsg();
+				}
+			}
+			function sendMsg(){
+				var oLi = document.createElement("li");
+				oLi.innerHTML = oTxt.value;
+				oList.appendChild(oLi);
+				oTxt.value = "";
+			}
+		</script>
+	</body>
+</html>

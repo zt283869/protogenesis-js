@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<style>
+			
+			* { margin: 0; padding: 0;line-height: 30px;}
+			ul { margin: 20px auto; width: 300px; border: 1px solid #aaa; padding: 20px;}
+			li { list-style: none;   border-bottom: 1px dashed #aaa;}
+			div{
+				position:absolute;
+				left:100px;
+				top:50px;
+				border:1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div >
+		<ul id="list">
+			<li>轻轻的我走了，正如我轻轻的来</li>
+			<li>轻轻的我来了，正如我轻轻的走</li>
+			<li>放假去哪里玩？？？</li>
+			<li>放假去好好学习</li>
+			<li>放假去new一个对象</li>
+		</ul>
+		</div>
+		<script src="base.js"></script>
+		<script>
+			var oList = getId("list");
+			console.log(oList);
+			console.log(oList.childNodes);
+			var oChild = [];
+			for(var i=0;i<oList.childNodes.length;i++){
+				if(oList.childNodes[i].nodeType==1){
+					oChild.push(oList.childNodes[i]);
+				}
+			}
+			console.log(oChild);
+			console.log(oList.parentNode);
+			console.log(oList.offsetLeft);  // 根据父元素确定，如果父元素没有定位，则结果为元素离body边界的距离
+			console.log(oList.offsetTop);	//	如果父元素有定位，则结果为元素距离定位父元素边界的距离
+			console.log(oList.offsetWidth);  // 元素的宽高
+			console.log(oList.offsetHeight);
+		</script>
+	</body>
+</html>

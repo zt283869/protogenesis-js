@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>		  
+	<body>
+		
+	<script>
+	//	选择排序
+		var arr = [23,34,55,3,12,56,31,78,15];
+		for(var j=0;j<arr.length;j++){
+		
+			
+		//	第一次  j=0;
+		//  第二次  j=1;
+			var max = arr[0];
+			var n = 0;
+			for(var i=0;i<arr.length-j;i++){
+				if(max<arr[i]){
+					max = arr[i];
+					n = i;
+				}
+			}
+		//	n   arr.length-1
+			var temp = arr[n];
+			arr[n] = arr[arr.length-1-j];
+			arr[arr.length-1-j] = temp;
+		}	
+		console.log(arr);
+		
+	//	console.log(max);
+	//	console.log(n);
+	</script>
+	</body>
+</html>

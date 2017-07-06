@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+	<script>
+	//	for循环
+		var sum = 0;
+		for(var i=1;i<=100;i++){
+		//	语句
+			sum+=i;
+		}
+		console.log(sum);
+		var sum1 = 0;
+		for(var i=1;i<=1000;i++){
+		//	语句
+			sum1+=i;
+		}
+		console.log(sum1);
+	//	1-100之间偶数和
+		var sum2 = 0;
+		for(var i=1;i<=100;i++){
+			if(i%2==0){
+				sum2+=i;
+			}
+		}
+		console.log(sum2);
+	//	for九九乘法表
+		for(var i=1;i<=9;i++){  //行
+			for(var j=1;j<=i;j++){  // 列
+				document.write(j+"*"+i+"="+i*j+" ");
+			}
+			document.write("<br/>");
+		}
+	//	逢七过   1-99之间要过的数字  每5个一行
+		var flag = 0;
+		for(var i=1;i<100;i++){
+			if(i%7==0||i%10==7||parseInt(i/10)==7){
+				document.write(i+" ");
+				flag++;
+				if(flag%5==0){
+					document.write("<br/>");
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

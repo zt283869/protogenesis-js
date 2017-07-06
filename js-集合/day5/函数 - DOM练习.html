@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+	<style>
+		#container{
+			position:relative;
+			width:980px;
+		}
+		#next,#prev{
+			position:absolute;
+			right:20px;
+			top:200px;
+			font-size:100px;
+			font-weight:bold;
+			color:#fff;
+			background:rgba(0,0,0,0.4);
+			width:100px;
+			height:150px;
+			text-align:center;
+			line-height:150px;
+			text-decoration:none;
+		}
+		#prev{
+			left:20px;
+		}
+	</style>
+</head>
+<body>
+	计时<p id="txt">0</p>
+	<div id="container">
+		<img src="images/big0.jpg" id="Img"/>
+		<a id="next" href="###">&gt;</a>
+		<a id="prev" href="###">&lt;</a>
+	</div>
+	<script src="base.js"></script>  
+	<script>   // 使用之前先引入
+	//	setInterval(,1000)
+		var txt = getId("txt");
+		var _img = getId("Img");
+	//	console.log(txt);
+		var i=0;
+		setInterval(function(){
+			i++;
+			
+			if(i==6){ 
+				i=0;
+			}
+			txt.innerHTML = i;
+			_img.src = "images/big"+i%6+".jpg";
+		},1000)
+	//	input框取值	   取出的任何值都是字符串,数字计算记得转格式
+		var _next = getId("next");
+		_next.onclick = function(){
+			i++;
+			if(i==6){
+				i=0;
+			}
+			_img.src = "images/big"+i+".jpg";
+		}
+		var _prev = getId("prev");
+		_prev.onclick = function(){
+			i--;
+			if(i==-1){
+				i=5;
+			}
+			_img.src = "images/big"+i+".jpg";
+		}
+	</script>
+</body>
+</html>

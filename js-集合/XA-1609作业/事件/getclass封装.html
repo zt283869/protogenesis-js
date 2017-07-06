@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<style>
+		#div1 {width:200px; height:200px; left: 0; top: 0; background:#CCC; position:absolute;}
+		ul,li{
+			list-style-type:none;
+		}
+		li{
+			float:left;
+			width:100px;
+			height:100px;
+			background:red;
+			margin-left:10px;
+			border-radius:50%;
+			cursor:pointer;
+		}
+		li.active{
+			background:#666;
+		}
+	</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题文档</title>
+	<script>
+
+	</script>
+	</head>
+
+	<body>
+	<ul>
+		<li class="aa  bb  cc active"></li>
+		<li class="aa"></li>
+		<li class="aa"></li>
+		<li class="aa"></li>
+		<li class="aa"></li>
+	</ul>
+	<script>
+	//	var oLi = document.getElementsByClassName("aa");
+	//	console.log(oLi);   getclass兼容封装  兼容IE低版本
+		function getClass(str){
+			var all = document.getElementsByTagName("*");
+			var res = [];
+			for(var i=0;i<all.length;i++){
+				if(all[i].className.indexOf(str)!=-1){
+					res.push(all[i]);
+				}
+			}
+			return res;
+		}
+		console.log(getClass("aa"));
+	//	
+		function addClass(obj,str){   // 添加一个className
+	//		console.log(obj.className);
+			if(obj.className.indexOf(str)==-1){
+				obj.className +=" "+str;
+			}
+			
+	//		console.log(obj)
+		}
+	//	addClass(getClasss("aa")[0],"active");
+	//	
+		function removeClass(obj,str){   //删除一个className
+	//		console.log(obj.className);
+			obj.className = obj.className.replace(str,"");
+		}
+		removeClass(getClass("aa")[1],"active");
+		
+		var oLi = getClass("aa");    // 获取
+		for(var i=0;i<oLi.length;i++){   // 添加事件 addClass和removeClass 
+			oLi[i].onmouseover = function(){
+				for(var j=0;j<oLi.length;j++){
+		//			oLi[j].className = "";
+					removeClass(oLi[j],"active");
+				}
+				addClass(this,"active");
+			}
+		}
+	</script>
+	</body>
+</html>

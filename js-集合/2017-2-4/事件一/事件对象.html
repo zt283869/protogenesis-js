@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height:100%;
+			}
+			#d1{
+				width:100px;
+				height:100px;
+				background:#666;
+			}
+			body{
+				background:black;
+			}
+			p{
+				margin: 50px auto;
+			}
+			#Img{
+				position:absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+		
+		</div>
+		<img src="girl.gif" id="Img"/>
+		<p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p><p>111</p>
+		<script src="base.js"></script>
+		<script>
+			document.onmousedown = function(evt){
+		//		console.log(evt);
+		//		console.log(event);
+		//		兼容的三种写法
+		/*		if(evt){
+					var e = evt;
+				}else{
+					var e = window.event;
+				}
+		*/		
+		//		var e = evt?evt:event;
+				var e = evt||event;
+		//		console.log(e);
+		//		console.log(e.button);
+		//		button属性 2右键  其他键各浏览器差别较大
+		
+		//	clientX clientY
+				console.log(e.clientX+"-"+e.clientY); // 根据浏览器窗口
+		//  pageX pageY
+				console.log(e.pageX+"-"+e.pageY);   // 根据内容
+			}
+			var oImg = document.getElementById("Img");
+			
+			document.onmousemove = function(evt){
+				var e = evt||event;
+				oImg.style.left = e.pageX-104+"px";  //减104是减掉图片的一半，使鼠标在图片中心
+				oImg.style.top = e.pageY-104+"px";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//	创建xhr对象  异步的javascript和xml(json)   ajax
+			var xhr = new XMLHttpRequest();
+		//	ActiveXObject()
+		//	console.log(xhr);
+		//	创建连接属性
+			xhr.open("GET","json/222.json");
+		//	发送
+			xhr.send();
+		//	设置响应返回结果处理
+			console.log(xhr);
+			xhr.onreadystatechange  = function(){
+				console.log(xhr.readyState);
+		//		响应完成并且数据找到的时候进行返回数据的处理		
+				if(xhr.readyState==4&&xhr.status==200){
+		//			console.log(xhr.responseText);
+					var data = xhr.responseText;
+					console.log(data);
+				}
+			}
+		</script>
+	</body>
+</html>

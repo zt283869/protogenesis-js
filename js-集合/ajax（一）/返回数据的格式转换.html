@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="list">
+			
+		</ul>
+		<script>
+		
+			var oList = document.getElementById("list");
+			var xhr = new XMLHttpRequest();
+			var url = "json/222.json";
+//			var url =  "json/aaa.json";
+			xhr.open("GET",url);
+			xhr.send();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var data = xhr.responseText;
+					var userDate = JSON.parse(data);
+					console.log(userDate);
+//					console.log(eval(data));
+					//返回数据转化为对象
+//					var userDate = eval("("+	+")");
+					for(var i=0;i<userDate.length;i++){
+						var oLi = document.createElement("li");
+						oLi.innerHTML = "<p>"+userDate[i].name+"</p><p>"+userDate[i].pwd+"</p>"
+						oList.appendChild(oLi);
+					}
+				}	
+			}
+			
+//			eval("var a=1;var b=2;alert(a+b)");
+//			eval解析数据是不安全的,不关心请求数据格式的错误有（恶意）代码会直接执行
+//			JSON.parse()请求数据格式不对的时候报错，比较安全
+		</script>
+	</body>
+</html>

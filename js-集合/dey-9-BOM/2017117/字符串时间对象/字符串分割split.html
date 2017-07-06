@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date对象</title>
+
+</head>
+<body>
+	<form method="get" action="index.html">
+		<input type="text" id="name" name="aaaa"/>
+		<input type="text" id="age" name="bbb"/>
+		<input type="submit" id="btn"/>
+	</form>
+	<script>
+		//var str = "file:///C:/Users/avery/Desktop/Javascript/day06%20String-Math-Date-ES5/index.html?name=qeq&age=30qweq";
+		var str = "https://www.baidu.com/s?name=avery&age=20&sex=male";
+	//	split("")字符串分割    join("")
+		var a = "name-age-sex";
+	//	console.log(a.split("-"));
+		var str1 = str.split("?")[1];
+		console.log(str1);
+		var str2 = str1.split("&");
+		console.log(str2);
+		for(var i=0;i<str2.length;i++){
+			console.log(str2[i].split("=")[1]);
+		}
+	//	名称名字不完全显示
+		var user1 = "奥斯特洛夫斯基";
+		var user2 = "尼古拉赵四";
+		var user3 = "海贼王路飞";
+		var num = "13456789876";
+		function nameReplace(str){
+			var res = "";
+			for(var i=0;i<str.length;i++){
+				if(i<3){
+					res+=str[i];
+				}else{
+					res+="*";
+				}
+			}
+			return res;
+		}
+		console.log(nameReplace(user1));
+		console.log(nameReplace(user2));
+		console.log(nameReplace(user3));
+		console.log(nameReplace(num));
+	</script>
+</body>
+</html>
+</html>

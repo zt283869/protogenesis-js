@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+	<!--	<meta http-equiv="refresh" content="2;url=http://www.baidu.com" />  -->
+		<style>
+			p{
+				margin: 50px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="###" id="aa">点击关闭</a>
+		<a href="###" id="bb">点击打开一个新窗口</a>
+		<p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p>
+		<p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p><p>滚动</p>
+		<a href="###" id="backTop">返回顶部</a>
+		<script src="base.js"></script>	
+		<script>
+			var backTop = getId("backTop");
+			window.onscroll = function(){
+			//	console.log(document.body.scrollTop);
+			//	console.log(document.documentElement.scrollTop);
+			//	if else
+			//  兼容写法
+			/*	var scrollTop;
+				if(document.body.scrollTop){  //谷歌
+					scrollTop = document.body.scrollTop;
+				}else{  // 火狐,IE
+					scrollTop = document.documentElement.scrollTop;
+				}
+				console.log(scrollTop);
+			*/	
+			//	三目运算符
+			/*	var scrollTop = document.body.scrollTop?document.body.scrollTop:document.documentElement.scrollTop;
+				console.log(scrollTop);
+			*/  
+			//	||   &&
+				var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
+			//	console.log(scrollTop);
+				if(scrollTop>200){
+					getId("aa").innerHTML = "DAYU ";
+				}else{
+					getId("aa").innerHTML = "XIAOYU ";
+				}
+			}
+			var timer;
+			getId("backTop").onclick = function(){
+			//	document.body.scrollTop = document.documentElement.scrollTop = 0;
+				var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
+				timer = setInterval(function(){
+					scrollTop-=80;
+					document.body.scrollTop = scrollTop;
+					if(scrollTop<=0){
+						clearInterval(timer);
+					}
+				},30)
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+	<script>
+	//	逢七过   七的倍数，数字里面有7的都跳过   0-100  断点调试 sources
+	/*	var i=1;
+		while(i<100){
+			if(i%7==0||i%10==7||parseInt(i/10)==7){
+				console.log(i);
+			}
+			i++;
+		}
+	*/	
+		//  输出图形
+	/*	var j = 1;
+		while(j<=40){
+			document.write("* ");
+			if(j%10==0){
+				document.write("<br/>");
+			}
+			j++;
+		}
+	*/	
+	/*	var j=1;
+		while(j<=4){   //行
+			var i=1;
+			while(i<=10){   // 列
+				document.write("* ");
+				i++;
+			}
+			document.write("<br/>");
+			j++;
+		}
+	*/	
+	//
+		var i = 1; 
+		while(i<=9){  //   行
+			var j = 1;
+			while(j<=i){  // 列
+				document.write(j+"*"+i+"="+i*j+" ");
+				j++;
+			}
+			document.write("<br/>");
+			i++;
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

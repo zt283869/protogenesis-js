@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Math</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<script>
+	//	奇偶数   最大数
+		var num1 = parseInt(Math.random()*100);
+	//	if(num1%2){
+	//		alert(num1+":奇数");
+	//	}else{
+	//		alert(num1+":偶数");
+	//	}
+	//	var a = 1000;
+	//	var b = 500;
+	//	if(a>b){
+	//		alert(a);
+	//	}else{
+	//		alert(b);
+	//	}
+	//	闰年    4年一闰   百年400年一闰
+	//	百年被400整除     不是百年能被4整除     3000年是平年不是闰年
+	/*	if(){
+			if(){
+				if(){
+				
+				}else{
+					
+				}
+			}else{
+				
+			}
+		}else{
+			
+		}
+	*/	
+		var year = 2016;
+	/*	if(year%100==0){
+			if(year%400==0){
+				alert("闰年");
+			}else{
+				alert("平年");
+			}
+		}else{
+			if(year%4==0){
+				alert("闰年");
+			}else{
+				alert("平年");
+			}
+		}
+	*/
+		if(year%400==0||(year%100!=0&&year%4==0)){
+			alert("闰年");
+		}else{
+			alert("平年");
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date对象</title>
+</head>
+<body>
+	<p id="time"></p>
+	<img src="images/0.png" id="img0"/><img src="images/0.png" id="img1"/>:
+	<img src="images/0.png" id="img2"/><img src="images/0.png" id="img3"/>:
+	<img src="images/0.png" id="img4"/><img src="images/0.png" id="img5"/>
+	<script src="base.js"></script>
+	<script>
+		var txt = getId("time");
+		function nowTime(){
+			var d1 = new Date();
+			var _year = d1.getFullYear();
+			var _month = d1.getMonth();  //  月份从0开始记，需加1,
+			var _date = d1.getDate();
+			var _week = d1.getDay();  //  0 1 2 3 4 5 6
+			var _h = d1.getHours();
+			var _m = d1.getMinutes();
+			var _s = d1.getSeconds();
+			var week = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+			function changeNum(num){
+		//		if(num<10){
+		//			return "0"+num;
+		//		}else{
+		//			return num;
+		//		}
+				return num>=10?num:"0"+num;
+			}
+			txt.innerHTML = _year+"年"+(_month+1)+"月"+_date+"日 "+week[_week]+" "+changeNum(_h)+":"+changeNum(_m)+":"+changeNum(_s);
+			
+			//	图片时钟
+			var now = ""+changeNum(_h)+changeNum(_m)+changeNum(_s);
+			for(var i=0;i<6;i++){
+				getId("img"+i).src = "images/"+now[i]+".png";
+			}
+		}
+		nowTime();
+		setInterval(function(){
+			nowTime();
+		},1000)
+		
+	</script>
+</body>
+</html>
+</html>

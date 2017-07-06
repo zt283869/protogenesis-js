@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#bg{
+				width: 1092px;
+				height: 698px;
+				background: url(images/paint.png);
+				position: relative;
+			}
+			#item{
+				width: 819px;
+				height: 460px;
+				box-shadow: 1px 1px 5px 1px #666;
+				position: absolute;
+				left: 12px;
+				top: 171px;
+			}
+			#loca{
+				font-family: "微软雅黑";
+				width: 150px;
+				height: 25px;
+				position: absolute;
+				left: 30px;
+				top: 665px;
+				line-height: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bg">
+			<div id="item"></div>
+			<div id="loca"></div>
+		</div>
+		<script>
+			var oItem = document.getElementById("item");
+			var oBg = document.getElementById("bg");
+			var oLoca = document.getElementById("loca");
+			oItem.onmousemove = function(ev){
+				console.log(ev.clientX+"-"+ev.clientY);
+				var e = ev||window.event;
+				var L = e.pageX-oItem.offsetLeft-oBg.offsetLeft;
+				var T = e.pageY-oItem.offsetTop-oBg.offsetTop;
+				oLoca.innerHTML = L+","+T+"像素";
+			}
+			oItem.onmouseout = function(){
+				oLoca.innerHTML = "";
+			}
+		</script>
+	</body>
+</html>

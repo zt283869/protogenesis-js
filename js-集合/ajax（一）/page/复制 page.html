@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分页</title>
+		<style>
+			*{margin: 0;padding: 0;font-family: "微软雅黑";}
+			div{margin: 0 auto;}
+			ul,li{list-style-type: none;}
+			.container,.pages{margin: 0 auto;padding: 5px;width: 800px;border: 1px solid #666;overflow: hidden;}
+			li{padding: 5px 0;}
+			ul.container li{height: 85px;}
+			.pages li{width: 30px;line-height: 20px;border: 1px solid #666;float: left;margin-left: 5px;text-align: center;}
+			.pages li.active{border: 1px solid red;}
+		</style>
+	</head>
+	<body>
+		<marquee direction="left">我是滚动的文字</marquee>
+		<ul class="container">
+			
+		</ul>
+		<ul class="pages">
+			<li class="active"><a href="###">1</a></li>
+			<li><a href="###">2</a></li>
+			<li><a href="###">3</a></li>
+			<li><a href="###">4</a></li>
+			<li><a href="###">5</a></li>
+		</ul>
+		<script src="ajax.js"></script>
+		<script>
+			var oUl = document.getElementsByClassName("container")[0];
+			var pages = document.getElementsByClassName("pages")[0];
+			var pageLi = pages.getElementsByTagName("li"); //0-5
+			
+			ajax("lol.json",function(data){
+				var res = JSON.parse(data);
+				for(var i=0;i<5;i++){
+					var oLi = document.createElement("li");
+					oLi.innerHTML = "<h3>"+res[i].name+"</h3><p>"+res[i].detail+"</p>";
+					oUl.appendChild(oLi);
+				}
+			});
+			
+			//分页按钮的点击
+			for(var i=0;i<pageLi.length;i++){
+				pageLi[i].index = i;
+				pageLi[i].onclick = function(){
+					oUl.innerHTML = "";
+					for(var j=0;j<pageLi.length;j++){
+						pageLi[j].className = "";
+					}
+					this.className = "active";
+					var n = this.index; // n*5-(n+1)*5   0-5  5-10  10-15
+					ajax("lol.json",function(data){
+						var res = JSON.parse(data);
+//						var n = this.index;
+//						console.log(this.index); k<(n+1)*5
+						var max = (n+1)*5>res.length?res.length:(n+1)*5;
+						for(var k=n*5;k<max;k++){						
+							var oLi = document.createElement("li");
+							oLi.innerHTML = "<h3>"+res[k].name+"</h3><p>"+res[i].detail+"</p>";
+							oUl.appendChild(oLi);
+						}
+					})
+				}
+			}
+			// this的指向仅局限于函数的的第一层，再往下函数内的函数的指向不再指向触发事件的对象
+		</script>
+	</body>
+</html>

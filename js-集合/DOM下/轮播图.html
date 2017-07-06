@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+		<style>
+			#wrap{
+				width:980px;
+				height:500px;
+				position:relative;
+				margin:50px auto;
+			}
+			ul,li{
+				list-style-type:none;
+			}
+			ul#list{
+				position:absolute;
+				bottom:20px;
+				left:200px;
+			}
+			ul#list li{
+				width:50px;
+				height:50px;
+				background:#fff;
+				border-radius:50%;
+				float:left;
+				margin-left:20px;
+				cursor:pointer;
+			}
+			ul#list li.active{
+				background:red;
+			}
+			#prev,#next{
+				position:absolute;
+				top:200px;
+				text-decoration:none;
+				display:inline-block;
+				width:150px;
+				height:80px;
+				line-height:80px;
+				text-align:center;
+				font-size:50px;
+				background:rgba(0,0,0,0.6);
+				color:#fff;
+				font-weight:bold;
+			}
+			#prev{
+				left:0px;
+			}
+			#next{
+				right:0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"> 
+			<img src="images/big0.jpg" id="Img"/>
+			<ul id="list">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<a id="prev" href="###">&lt;</a>
+			<a id="next" href="###">&gt;</a>
+		</div>
+		<script src="base.js"></script>	
+		<script>
+		//	轮播图
+			var oImg = document.getElementById("Img");
+			var oWrap = document.getElementById("wrap");
+			var oLi = document.getElementById("list").getElementsByTagName("li");
+			var oNext = document.getElementById("next");
+			var oPrev = document.getElementById("prev");
+			var timer;
+		//	自动轮播
+			var m = -1;  //当前第几张
+			function autoPlay(){
+				timer = setInterval(function(){
+					m++;
+					if(m==6){
+						m = 0;
+					}
+					for(var i=0;i<oLi.length;i++){
+						oLi[i].className = "";
+					}
+					oLi[m].className = "active";
+					oImg.src = "images/big"+m+".jpg";
+				},1000)
+			}
+			autoPlay(); // 调用
+			
+			
+		//	鼠标移上停止移开自动执行
+			oWrap.onmouseover = function(){
+				clearInterval(timer);
+			}
+			oWrap.onmouseout = function(){
+				autoPlay();
+			}
+			
+		//	下面按钮的点击（鼠标移上）
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].index = i; //记录索引值
+				oLi[i].onmouseover = function(){
+					for(var j=0;j<oLi.length;j++){
+						oLi[j].className = "";
+					}
+					this.className = "active";
+					oImg.src = "images/big"+this.index+".jpg";
+					m = this.index;
+				}
+			}
+			
+		//	next的点击
+			oNext.onclick = function(){
+				m++;
+				if(m==6){
+					m = 0;
+				}
+				for(var i=0;i<oLi.length;i++){
+					oLi[i].className = "";
+				}
+				oLi[m].className = "active";
+				oImg.src = "images/big"+m+".jpg";
+			}
+			
+		//	prev的点击
+			oPrev.onclick = function(){
+				m--;
+				if(m==-1){
+					m=5;
+				}
+				for(var i=0;i<oLi.length;i++){
+					oLi[i].className = "";
+				}
+				oLi[m].className = "active";
+				oImg.src = "images/big"+m+".jpg";
+			}
+		</script>
+	</body>
+</html>

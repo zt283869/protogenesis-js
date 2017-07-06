@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date对象</title>
+
+</head>
+<body>
+	<script>
+	//	
+		var str = "Hello world!";
+		var arr = new Array();
+		var a = [23,2,234,5];
+		var str1 = new String("Hello world");
+		console.log(str1);
+	//	number string boolean 	
+	//	用new创建的都是对象类型
+		var num1 = new Number(10);
+		console.log(typeof num1);
+		var bool = new Boolean(true);
+		console.log(typeof bool);
+	//	String()  Number()  Boolean()
+	//	字符串  下标  length
+		var str = "Hello world!";
+		for(var i=0;i<str.length;i++){
+			console.log(str[i]);
+		}
+		console.log(str.length)
+	//	length  下标访问只读不可写  和数组不一样的地方
+		str[100] = "M";
+		console.log(str.length);
+		str.length = 1000;
+		console.log(str.length);
+	//	☆  .
+		console.log("a"<"A");
+	//	
+		console.log(str.charAt(0));
+		console.log(str.charCodeAt(0));
+		console.log(String.fromCharCode(100,56,34));
+	</script>
+</body>
+</html>
+</html>

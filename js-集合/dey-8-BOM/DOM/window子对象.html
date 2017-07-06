@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html id="dd">
+	<head>
+		<meta charset="UTF-8">
+		<title id="bb">BOM</title>
+	<!--	<meta http-equiv="refresh" content="2;url=http://www.baidu.com" />  -->
+	</head>
+	<body>
+		<a href="###" id="aa">点击跳转</a>
+		<a href="###" id="Amumu">阿木木</a>
+		<a href="###" id="Akali">阿卡丽</a>
+		<script src="base.js"></script>	
+		<script>
+		//	screen 浏览器支持不同,基本不用
+		/*	console.log(screenLeft);
+			console.log(screenTop);
+			console.log(screenX);
+			console.log(screenY);
+		*/
+		//	location
+			console.log(location);
+			getId("aa").onclick = function(){
+				location = "http://www.baidu.com"
+			}
+			getId("Amumu").onclick = function(){
+				location = "http://lol.qq.com/web201310/info-defail.shtml?id=Amumu";
+			}
+			getId("Akali").onclick = function(){
+				location = "http://lol.qq.com/web201310/info-defail.shtml?id=Akali";
+			}
+		//	location.reload();
+		//	history.go(0)
+		
+		//	navigator
+		//	navigator.userAgent  判断浏览器   判断IE版本
+			var agent = navigator.userAgent;
+			console.log(agent);
+		//	Chrome   Firefox MSIE
+			if(agent.indexOf("Chrome")!=-1){
+				alert("谷歌");
+			}
+			if(agent.indexOf("Firefox")!=-1){
+				alert("火狐");
+			}
+			if(agent.indexOf("MSIE")!=-1){
+				var n = agent.split("MSIE")[1].split(";")[0];
+				alert("IE"+n);
+			}
+		</script>
+	</body>
+</html>

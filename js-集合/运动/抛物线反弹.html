@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height: 100%;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#circle{
+				width: 40px;
+				height: 40px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#play{
+				margin-top: 50px;
+			}
+			#bar{
+				width: 100px;
+				height: 10px;
+				background: yellowgreen;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="circle">
+			
+		</div>
+		<div id="bar"></div>
+		<input type="button" id="play" value="start" />
+		<script>
+			var play = document.getElementById("play");
+			var oDiv = document.getElementById("circle");
+			var bar = document.getElementById("bar");
+			var w = getStyle(document.getElementsByTagName("body")[0],"width");
+			var h = getStyle(document.getElementsByTagName("body")[0],"height");
+			var timer;
+			//	获取引用样式的封装
+			function getStyle(obj,attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				}else{
+					return getComputedStyle(obj,null)[attr]
+				}
+			}
+			//	点击开始运动
+			var sX = 10;
+			var	sY = 15;
+			var l,t;
+			play.onclick = function(){
+				clearInterval(timer);  //清除之前的定时器
+				
+				
+				var oWidth = getStyle(oDiv,"width");
+				
+				var oHeight = getStyle(oDiv,"height");
+			//	console.log(parseInt(h)-parseInt(oHeight));
+				timer = setInterval(function(){
+//					sY+=2;
+					_left = parseInt(getStyle(oDiv,"left"));
+					_top = parseInt(getStyle(oDiv,"top"));
+					l = _left + sX;
+					t = _top +sY;
+//					下边界
+					if(t>parseInt(h)-parseInt(oHeight)){  // 先计算
+						t = parseInt(h)-parseInt(oHeight);
+						sY*=-1; //速度反向
+//						clearInterval(timer);
+					}
+					//上边界
+					if(t<0){
+						t = 0;
+						sY*=-1;
+					}
+//					右边界
+					if(l>parseInt(w)-parseInt(oWidth)){
+						l = parseInt(w)-parseInt(oWidth);
+						sX*=-1;
+					}
+//					左边界
+					if(l<0){
+						l = 0;
+						sX*=-1;
+					}
+					//计算完成再修改样式
+					oDiv.style.left = l+"px";
+					oDiv.style.top = t+"px";
+				},30)
+			}
+			
+			//	键盘控制滑块移动
+			document.onkeydown = function(ev){
+				var e = ev||event;
+				var l;
+				l = parseInt(getStyle(bar,"left"));
+				console.log(e.keyCode);
+				if(e.keyCode==37){
+					if(l-10<0){
+						bar.style.left = 0;
+					}else{
+						bar.style.left = l - 10 +"px";
+					}
+					
+				}
+				if(e.keyCode==39){
+					if(l+10>parseInt(w)-100){
+						bar.style.left = parseInt(w)-100+"px";
+					}else{
+						bar.style.left = l + 10 +"px";
+					}
+					
+				}
+			}
+		</script>
+	</body>
+</html>

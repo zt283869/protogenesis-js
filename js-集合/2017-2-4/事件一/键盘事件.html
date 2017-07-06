@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#d1{
+				width:100px;
+				height:100px;
+				background:#666;
+				position:absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+		
+		</div>
+		<script src="base.js"></script>
+		<script>
+			document.onkeydown = function(evt){
+				var e = evt||event;
+				var oDiv = document.getElementById("d1");
+		//		console.log(e);
+		//		getStyle()
+		//	keyCode判断键盘按下哪个键
+				switch(e.keyCode){
+					case 37:
+		//				console.log(oDiv.style.left);
+						oDiv.style.left = oDiv.offsetLeft - 2 +"px";
+						break;
+					case 38:
+						oDiv.style.top = oDiv.offsetTop - 2 +"px";
+						break;
+					case 39:
+						oDiv.style.left = oDiv.offsetLeft + 2 +"px";
+						break;
+					case 40:
+						oDiv.style.top = oDiv.offsetTop + 2 +"px";
+						break;
+					default:
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+	body { background-color: #000;}
+#div1 {width:100px; height:100px; background:url("girl.gif") no-repeat center; position:absolute;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<div id="div1"></div>
+<script src="base.js"></script>
+<script>
+	var div1 = getId("div1");
+	var a = 10;
+//	console.log(window.a);
+	document.onmousemove = function(e){
+	//	var evt = e?e:event;
+		var evt = e||event;
+		console.log(evt);		//  event  window.event
+		div1.style.left = e.clientX-50+"px";
+		div1.style.top = e.clientY-50+"px";
+	}
+</script>
+</div>
+</body>
+</html>

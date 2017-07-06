@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date对象</title>
+</head>
+<body>
+	<script src="base.js"></script>
+	<script>
+	//	console.log(getFullYear());
+		var d1 = new Date();
+	//	console.log(d1.getDate());
+	//	d1.setDate(17+365);
+	//	console.log(d1);
+		
+		function changeDate(n){
+			var oDate = new Date();
+			oDate.setDate(n+oDate.getDate());
+			return oDate;
+		}
+		console.log(changeDate(14));
+	</script>
+</body>
+</html>
+</html>

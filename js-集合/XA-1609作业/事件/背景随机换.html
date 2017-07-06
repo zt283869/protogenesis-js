@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select>
+			<option>红</option>
+			<option>黑</option>
+			<option>黄</option>
+		</select>
+		<input type="button" value="随机换背景色" id="changeBgColor"/>
+		<script>
+			document.getElementsByTagName("select")[0].onchange = function(){
+				var selColor = this.value;
+				switch(selColor){
+					case "红":
+						document.getElementsByTagName("body")[0].style.background = "red";
+						break;
+					case "黑":
+						document.getElementsByTagName("body")[0].style.background = "black";
+						break;
+					case "黄":
+						document.getElementsByTagName("body")[0].style.background = "yellow";
+						break;
+					default:
+						break;
+				}
+				
+			}
+			document.getElementById("changeBgColor").onclick = function(){
+				var randomColor = "rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+				document.getElementsByTagName("body")[0].style.background = randomColor;
+			}
+		</script>
+	</body>
+</html>

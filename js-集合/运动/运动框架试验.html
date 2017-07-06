@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#Img{
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/1a.jpg" id="Img"/>
+		<script src="move.js"></script>
+		<script>
+			var Img = document.getElementById("Img");
+			Img.onmouseover = function(){
+				move(Img,{"border-radius":"300px","opacity":"0.1"});
+			}
+			Img.onmouseout = function(){
+				move(Img,{"border-radius":"0px","opacity":"1"});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<select id="sel">
+		
+	</select>
+	<ul id="list">
+		<li>
+			<img src="images/1a.jpg"/>
+			<h1>龙猫</h1>
+		</li>
+	</ul>
+<script>
+	var lolServer = ["艾欧尼亚","班德尔城","祖安"];
+	var oSel = document.getElementById("sel");
+	var oList = document.getElementById("list");
+	for(var i=0;i<lolServer.length;i++){
+		oSel.innerHTML+="<option value='"+i+"'>"+lolServer[i]+"</option>";
+	}
+	for(var i=0;i<10;i++){
+		oList.innerHTML += "<li><img src='images/"+((i%5)+1)+"a.jpg'/><h1>龙猫</h1></li>";
+	}
+</script>
+</body>
+</html>

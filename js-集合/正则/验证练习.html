@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//用户名
+			// /^\w[0-9a-zA-Z]{5,11}$/
+			//	15 18 13 17 
+			//  /^(15|18|13|17)\d{9}$/
+			//  验证邮箱  
+			var reg =/^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.(com|cn|edu)$/;
+			console.log(reg.test("11@qaas.com"));
+			//身份证号码验证
+			var reg2 = /^\d{17}[0-9Xx]$/;
+//			var reg2 = /^\d{17}(\d|x|X)$/;
+			console.log(reg2.test("12345678912345678X"));
+			console.log(" asd d ".trim());
+		</script>
+	</body>
+</html>

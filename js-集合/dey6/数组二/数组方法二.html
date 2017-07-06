@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>		  
+	<body>
+		
+	<script>
+	//	sort()   
+		var a = [1,22,3,1112,33,334,3356,43,4,5555,666,6,66]
+		a.sort();
+		console.log(a);
+		
+		function compare(a,b){
+	//		if(a>b){
+	//			return 1;
+	//		}
+	//		else if(a<b){
+	//			return -1;
+	//		}else{
+	//			return 0;
+	//		}
+			return a-b;
+		}
+		a.sort(compare);
+		console.log(a);
+	//	setInterval(aa,100)
+	//	String();  toString()
+		console.log(typeof a.toString());
+		
+		var b = [23,45,56,87,9];
+	//	console.log(typeof b);  
+	//	typeof的结果   number string boolean  undefined   null(object) object  function
+		function bb(){
+			
+		}
+		var o = {
+			name:"tom",
+			age:20,
+			sex:"male"
+		};
+		var a = "name";
+	//	o.name o.age o.sex  o.a
+	//	o["name"]  o[a]
+	//	console.log(typeof bb);
+	//	console.log(typeof o);
+	//	对于对象类型判断   a instanceof  b   判断a是不是属于对象类型b
+		console.log(b instanceof Object);
+		console.log(bb instanceof Object);
+		console.log(b instanceof Array);
+		console.log(bb instanceof Array);
+		console.log(Array.isArray(b));
+		console.log(Array.isArray(bb));
+	//	两种数组判断方法
+	//	for  in
+		for(var x in b){
+			console.log(x);
+		}
+	//	console.log(o);
+	//	for in  专门用在对象类型里使用
+		for(var x in o){
+	//		console.log(x);
+			console.log(o[x]);
+		}
+		var name = "age";
+	//	console.log(o.name);
+	//	访问对象的几种方式
+		console.log(o.name);
+		console.log(o[name]);
+		console.log(o["name"]);
+		console.log(o["na"+"me"]);
+		
+	//	
+		var a = [];
+		for(var i=1;i<100;i++){
+			if(i%7==0||i%10==7||parseInt(i/10)==7){
+				a.push(i);
+			}
+		}
+		console.log(a);
+	</script>
+	</body>
+</html>

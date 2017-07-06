@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+	<script>
+	//	break   switch跳出switch语句，后面的都不执行
+	//	break循环使用直接跳出循环,只跳出当前循环，只跳出一层
+	//	for(var i=1;i<=100;i++){
+	//		console.log(i);
+	//		if(i==20){
+	//			break;
+	//		}
+	//	}
+		for(var i=1;i<=4;i++){
+			for(var j=1;j<=10;j++){
+				document.write("* ");
+				if(j>=5){
+					break;
+				}
+			}
+			document.write("<br/>");
+		}
+	//	素数
+		var n = 29;
+		var flag = 0;
+		for(var i=2;i<parseInt(n/2)+1;i++){
+			if(n%i==0){  // i能被n整除
+				flag = 1;
+				break;
+			}
+		}
+		if(flag==0){
+			alert("素数");
+		}else{
+			alert("合数");	
+		}
+	//	continue继续,continue跳出本次循环，本次循环continue之后多的代码不执行
+		for(var i=1;i<=20;i++){
+			if(i==10){
+				continue;
+			}
+			console.log(i);
+		}
+		var n = 10;
+		for(var i=1;i<=n;i++){
+			console.log(i);
+			n++;
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

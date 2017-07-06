@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin: 0; padding: 0}
+        body { padding: 50px;line-height: 30px;text-align: center; }
+        #option { overflow: hidden; border-left: 1px solid #999;}
+        #option li{ list-style: none; float: left; width: 100px; cursor: pointer;
+            border: 1px solid #999; margin:0 0 0 -1px;}
+        #option .active {display: block; background-color: #999; color: #fff;font-weight:bold;}
+        #list { padding: 20px 0;}
+        #list li { display: none; border: 1px solid #999; width: 400px; height: 300px;}
+        #list .active { display: block; }
+    </style>
+</head>
+<body>
+
+<ul id="option">
+    <li class="active">山东在哪?</li>
+    <li>河南在哪?</li>
+    <li>河北在哪?</li>
+    <li>咸阳在哪?</li>
+</ul>
+
+<ul id="list">
+    <li class="active">1山东就是在那个山的东边</li>
+    <li>2河南就在某条河的南边</li>
+    <li>3河北就在某条河的北边</li>
+    <li>4咸阳在哪??????</li>
+</ul>
+
+
+
+<script>
+	//	选项卡
+		var oLi1 = document.getElementById("option").getElementsByTagName("li");
+		var oLi2 = document.getElementById("list").getElementsByTagName("li");
+	//	console.log(oLi1);
+		for(var i=0;i<oLi1.length;i++){
+	//		console.log(i);
+			oLi1[i].index = i;  // 存储索引值i 
+			oLi1[i].onmouseover = function(){
+				console.log(this.index);	// 索引值的使用this.index		
+				for(var j=0;j<oLi1.length;j++){
+					oLi1[j].className = "";
+					oLi2[j].style.display = "none";
+				}
+				this.className = "active";
+				oLi2[this.index].style.display = "block";
+			}
+		}
+		var o = {};
+		o.name = "tom";
+		o.index = 10000;
+		console.log(o);
+</script>
+</body>
+</html>

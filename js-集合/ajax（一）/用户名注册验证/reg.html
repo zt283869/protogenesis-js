@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="txt"/>
+		<input type="button" id="btn" value="用户名检测"/>
+		<span id="msg"></span>
+		<script>
+			var txt = document.getElementById("txt");
+			var btn = document.getElementById("btn");
+			var msg = document.getElementById("msg");
+			txt.onblur = function(){
+				var oText = txt.value;
+				//	创建对象	
+				var xhr;
+				if(XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject("Microsoft.XMLHttp");
+				}
+			//	连接属性	
+				var url = "user.json";
+				xhr.open("GET",url);
+			//	发送	
+				xhr.send();
+			//	返回数据处理	
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						var data = JSON.parse(xhr.responseText);
+						console.log(data);
+						var flag = 0;
+						for(var i=0;i<data.length;i++){
+							if(oText==data[i].name){
+						//		alert("同户名已存在");
+								flag=1;
+							}
+						}
+						if(flag){
+							msg.innerHTML = "用户名已存在";
+							msg.style.color = "red";
+						}else{
+							msg.innerHTML = "用户名可用";
+							msg.style.color = "green";
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

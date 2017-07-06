@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>		  
+	<body>
+		
+	<script>
+	//	数值交换
+		var arr = [23,445,34,12,98,666,23,3345,32,4,54,66,1];
+		console.log(arr);
+		var oLen = arr.length;
+		arr[0]  arr[oLen-1]
+		var temp = arr[0];
+		arr[0] = arr[oLen-1];
+		arr[oLen-1] = temp;
+		console.log(arr);
+	
+	
+	
+	
+	//	求数组最大值
+		var max = arr[0];
+		var n = 0;
+		for(var i=0;i<oLen;i++){
+			if(max>arr[i]){
+				max = arr[i];
+				n = i;
+			}
+		}
+		console.log(max);
+		console.log(n);
+		
+	//	var a = [9,8,7,6,5,4]
+		
+		for(var j=0;j<arr.length;j++){
+			for(var i=0;i<arr.length;i++){ //  a.length-1  j=0                               //a.length-2  j=1
+				if(arr[i]>arr[i+1]){
+					var temp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = temp;
+				}
+			}
+		}
+		
+		console.log(arr);
+
+	</script>
+	</body>
+</html>

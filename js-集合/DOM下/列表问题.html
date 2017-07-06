@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        * { margin: 0; padding: 0;line-height: 30px;}
+        ul { margin: 20px auto; width: 300px; border: 1px solid #aaa; padding: 20px;}
+        li { list-style: none;   border-bottom: 1px dashed #aaa;}
+    </style>
+</head>
+<body>
+
+
+
+<ul id="list">
+
+    <li>轻轻的我走了，正如我轻轻的来</li>
+    <li>轻轻的我来了，正如我轻轻的走</li>
+    <li>放假去哪里玩？？？</li>
+    <li>放假去好好学习</li>
+    <li>放假去new一个对象</li>
+</ul>
+<div style="text-align: center">
+
+    <input type="button" value="首部添加" id="add-first"/>
+
+    <input type="button" value="尾部添加" id="add-last"/>
+    <p>在列表首部添加一个li内容为'I am first child，title为点击删除，背景颜色为#999，className为first</p>
+    <p>在列表尾部添加一个li内容为'I am last child，title为点击删除，背景颜色为#a72,className为last</p>
+    <p>当动态添加的li被点击的时候，自动删除自己</p>
+</div>
+
+
+
+<script>
+	var addFirst = document.getElementById("add-first");
+	var addLast = document.getElementById("add-last");
+	var oList = document.getElementById("list");
+	
+	addFirst.onclick = function(){
+		var oLi = document.createElement("li");
+		oLi.innerHTML = "I am first child";
+		oLi.title = "点击删除";
+		oLi.style.background = "#999";
+		oLi.className = "first";
+		oLi.onclick = function(){
+			this.remove();
+		}
+	//	oList.appendChild(oLi);
+		oList.insertBefore(oLi,oList.getElementsByTagName("li")[0]);
+	}
+	
+	addLast.onclick = function(){
+		var oLi = document.createElement("li");
+		oLi.innerHTML = "I am last child";
+		oLi.title = "点击删除";
+		oLi.style.background = "#a72";
+		oLi.className = "last";
+		oLi.onclick = function(){
+			this.remove();
+		}
+		oList.appendChild(oLi);
+	}
+</script>
+</body>
+</html>

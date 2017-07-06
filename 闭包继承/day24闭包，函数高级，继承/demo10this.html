@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		
+		html{
+			height:100%;
+			width:100%;
+		}
+		
+		body{
+			height:100%;
+			width:100%;
+		}
+		
+		#box{
+			position:relative;
+			width:100%;
+			height:100%;
+			border:0px solid red;
+			margin:0 auto;
+		}	
+		
+		img{
+			position:absolute;
+		}
+		
+		
+	</style>
+<body>	
+
+</body>
+</html>
+<script type="text/javascript">
+
+//this:这个对象，当前对象；
+
+//1、this用在事件对应的函数里时，this是事件源。事件源一般都是DOM对象。
+
+//2、this所在函数由某个对象调用（对象.函数名()）。this就是该对象。如果函数没有所属的对象，那么就属于window对象。
+//   this是谁？由调用函数的对象决定（函数的所属对象）。
+
+//3、this在构造函数里，this代码构造函数所创建的对象。
+
+//4、this的转移问题，在轮播图封装成面向对象时，定时器那块出现了this的转移。 
+// 关于this转移问题，万变不离其宗的办法是：找函数的直接调用对象。
+
+
+
+//2、this所在函数由某个对象调用（对象.函数名()）。this就是该对象。
+function Person(id,name){
+	this.id = id;
+	this.name = name;
+	this.eat  = eatOut;
+}
+
+
+function eatOut(){
+	//this:这个对象
+	alert(this.name);//this是谁？
+	alert(this.t);//this是谁？
+	
+}
+
+
+var t = 20;//全局变量都是window对象的属性。
+
+//window.name="我是窗口";
+
+eatOut();
+
+
+/*
+var p1 = new Person("007","江泽民");
+p1.eat();
+
+
+var p2 = new Person("008","白百合");
+p2.eat();
+
+
+function Dog(id,name){
+	this.id = id;
+	this.name = name;
+	this.eat  = eatOut;
+}
+
+var d1 = new Dog("01001","小黑");
+d1.eat();
+*/
+
+</script>

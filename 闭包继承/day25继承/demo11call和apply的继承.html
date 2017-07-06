@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		
+		html{
+			height:100%;
+			width:100%;
+		}
+		
+		body{
+			height:100%;
+			width:100%;
+		}
+		
+		#box{
+			position:relative;
+			width:100%;
+			height:100%;
+			border:0px solid red;
+			margin:0 auto;
+		}	
+		
+		img{
+			position:absolute;
+		}
+		
+		
+	</style>
+<body>	
+	<input id="btn01" type="button" value="测试1"/>
+	<input id="btn02" type="button" value="测试2"/>
+	<input id="btn03" type="button" value="测试3"/>
+	<input id="btn04" type="button" value="测试4"/>
+	<div id="box">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+"use strict";
+
+function Animal(name,sex,age,weight){
+	this.name= name;
+	this.sex = sex;
+	this.age = age;
+	this.weight = weight;
+	this.arr = new Array("ddd","tt");
+}
+
+function Person(name,sex,age,weight,id,iq,eq){
+	Animal.call(this,name,sex,age,weight);
+	this.id = id;
+	this.iq = iq;
+	this.eq = eq;
+}
+
+let p1 = new Person("张三","男",5,120,"007",120,10);
+
+let p2 = new Person("张四","女",5,120,"008",121,9);
+
+
+window.onload=function(){
+
+}
+
+</script>

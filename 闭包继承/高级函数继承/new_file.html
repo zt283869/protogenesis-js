@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function obj(id,name){
+				this.id = id;
+				this.name = name;
+			}
+			obj.prototype.country = "中国";
+			obj.prototype.eat = function(str){
+				
+				alert(this.name+"再吃"+str);
+			}
+			var stet = new obj("007","江泽民");
+	//			alert(stet.eat("肉夹馍"));
+	//			console.log(stet.name);
+	//			console.log(stet.country);
+	//			console.log(stet.prototype.country);//这样是直接访问stet的原型属性，这样访问不到
+	//			console.log(stet.__proto__.country);//这样是可以访问到的 
+	//			alert(obj.prototype.isPrototypeOf(stet));//true//从obj的原型来的 
+	//			alert(obj.hasOwnProperty("name"));//true;//obj里有name属性
+	//			alert(Object.getPrototypeOf(stet)==obj.prototype);//true//函数是可以得到对象的原型？
+	//			alert(stet instanceof obj);//ture;	stet就是obj	
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			'user strict';
+			class Father {
+		    constructor(name,age) {
+		        this.name = name;
+		        this.age = age;
+		   }
+		    sayName() {
+		        console.log("name:"+this.name+"age:"+this.age);
+		    }
+		}
+		var str = new Father("zhytao",20);//es6父级里的属性和方法经过继承了，子集赋值也无法修改。
+			console.log(str.name);//zhutao
+			console.log(str.age);//20
+		
+		class Son extends Father {
+		    constructor(name,age) {
+		        super(name,age);
+		    }
+		}
+		var bigSon = new Son('大头儿子',30);//子对象传给父对象this的初始化值
+//		bigSon.sayName();//调用父对象方法
+
+
+		
+      function toArray(str,sub){
+	        var index = 0;
+	        var arr = [];
+	        var reg = new RegExp(sub,"g");
+	        var countArr = str.match(reg);
+	        var count = countArr.length;
+	        for(var i=0;i<count;i++){
+	           index = str.indexOf(sub);
+	           var liStr = str.substring(0,index);
+	           arr.push(liStr);
+	           str = str.replace(liStr+sub,"");
+	        }
+	        arr.push(str);
+	        return arr;
+      }
+
+var str = "arr,dsa,das";
+var sub = ",";
+console.log(toArray(str,sub));
+		</script>
+	</body>
+</html>

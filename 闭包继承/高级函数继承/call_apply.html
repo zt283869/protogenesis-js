@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Person(id,name){
+				this.id = id;
+				this.name = name;
+				this.eat = eatOut;
+			}
+			function eatOut(str1,str2){
+				alert(this.name+"再吃"+str1+"同时喝着"+str2);
+			}
+			var p1 = new Person("008","江泽民");
+//			eatOut.call(p1,"凉皮","冰封");
+			function stes(str1,str2){
+			eatOut.apply(p1,arguments);				
+			}
+//			stes("撒旦","大多数");
+			    var color = "红色";
+			    var box = {
+			        color:"蓝色"  
+			    }
+			    function sayColor(){
+			        console.log(this.color);
+			    }
+			    sayColor.call(this);//红色 
+			    sayColor.apply(box);//蓝色  
+			  
+			  
+			  
+			  
+			  
+			  //call_apply继承
+			  //组合继承
+			    function obj(name,age){			    
+			    	this.name = name;
+			    	this.age;
+			    }
+			    obj.prototype.eat = function(str){
+			    	alert(str);
+			    }
+			    //继承父对象类属性；
+			  	function Person(name,age,iq,id){
+					obj.apply(this,arguments);	
+					this.iq = iq;
+					this.id = id;
+			  	}
+			  	//继承父对象共享的方法和属性；
+			  	Person.prototype = new obj();
+			  	
+			  	var str = new Person("zhutao",20,100,"001")
+			  		
+//			  	alert(str.name);			    			
+			    
+			    var strt = new obj("zhutaoxiaohau",20);
+//			    strt.eat(this.name);
+			    console.log(strt);
+		</script>
+	</body>
+</html>

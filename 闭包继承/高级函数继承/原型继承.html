@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function obj(name,age){
+				this.name = name;
+				this.age = age;
+			}
+			function Person(id,iq){
+				this.id = id;
+				this.iq = iq;
+				
+			}
+			
+			Person.prototype = new obj("zhutao",20);
+			
+			var str = new Person("007",100);
+			
+		</script>
+	</body>
+</html>

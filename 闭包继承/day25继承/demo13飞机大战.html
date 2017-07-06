@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+<body>	
+<!--
+	<div id="mapId">
+		
+	</div>
+	-->
+</body>
+</html>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript">
+"use strict";
+
+//移动的物体
+function MoverObject(boxId,objId,left,top,width,height,timeSpace,incLeft,incTop,maxLeft,maxTop,bgImg){
+	if(arguments.length>0){
+		this.boxId = boxId;
+		this.objId = objId;
+		this.left = left;
+		this.top = top;
+		this.width = width;
+		this.height = height;
+		this.timeSpace = timeSpace;
+		this.incLeft = incLeft;
+		this.incTop = incTop;
+		this.maxLeft = maxLeft;
+		this.maxTop = maxTop;
+		this.bgImg = bgImg;
+		this.timer = null;
+		this.initUI();
+	}	
+}
+
+MoverObject.prototype.initUI = function(){
+	let Obj = $create("<img>");	
+	Obj.id = this.objId;
+	Obj.src = this.bgImg;
+	Obj.style.cssText="position:absolute;left:"+this.left+"px;top:"+this.top+"px;width:"+this.width+"px;height:"+this.height+"px";	
+	$(this.boxId).appendChild(Obj);	
+}
+
+//移动
+MoverObject.prototype.goStep = function(){
+	
+	this.left = this.left + this.incLeft;
+	this.top = this.top + this.incTop;
+	if(this.left<0){
+		this.left = 0;
+	}else if(this.left>this.maxLeft){
+		this.left=this.maxLeft;
+	}
+
+	if(this.top<0){
+		//this.top=0;
+		this.over();
+		return;
+	}else if(this.top>this.maxTop){
+		this.top=this.maxTop;
+	}
+	
+	//改变外观；
+	$(this.objId).style.left = this.left+"px";
+	$(this.objId).style.top = this.top+"px";
+		
+}
+
+MoverObject.prototype.move = function(){
+	let that = this;
+	this.timer = setInterval(function(){
+		that.goStep();
+	},this.timeSpace);	
+}
+
+//我方战机
+function MyPlane(boxId,objId,left,top,width,height,timeSpace,incLeft,incTop,maxLeft,maxTop,bgImg,map){
+	MoverObject.call(this,boxId,objId,left,top,width,height,timeSpace,incLeft,incTop,maxLeft,maxTop,bgImg);
+	this.map = map;
+	this.init();
+}
+
+MyPlane.prototype = new MoverObject();//
+
+//DOM对象和JS对象
+//DOM对象：document object modal；
+//BOM：Broswe Object Modal；
+
+//宿主对象: DOM对象和BOM对象。
+//本地对象：javascript自有的对象，也就是官方对象，Date，Array，String；
+
+MyPlane.prototype.init = function(){
+/*
+	let that = this;//飞机实例
+	this.left = (this.map.width-this.width)/2;
+	this.top = (this.map.height-this.height);
+
+	$(this.objId).style.left = this.left+"px";
+	$(this.objId).style.top = this.top+"px";
+	*/
+	
+	//给地图绑定onmousemove事件
+	/*
+	$(this.boxId).onmousemove = function(event){
+		let evt = event||window.event;
+			
+		let leftTemp = evt.clientX- that.map.left - that.width/2;
+		let topTemp =evt.clientY- that.map.top - that.height/2;
+		
+		if(leftTemp<0){
+			leftTemp = 0;
+		}else if(leftTemp>that.maxLeft-that.width){
+			leftTemp=that.maxLeft-that.width;
+		}
+		
+		if(topTemp<0){
+			topTemp = 0;
+		}else if(topTemp>that.maxTop-that.height){
+			topTemp=that.maxTop-that.height;
+		}
+		
+		that.left =  leftTemp;
+		that.top  = topTemp;
+		$(that.objId).style.left = leftTemp +"px";
+		$(that.objId).style.top = topTemp+"px";
+	}
+	*/
+	
+}
+
+MyPlane.prototype.shoot = function(){	
+	let buttetOrd = 1;	
+	let that = this;
+	
+	setInterval(function(){
+		buttetOrd++;
+		let b = new Bullet("mapId",that.objId+"b"+buttetOrd,-10000,-10000,3,7,50,0,-10,that.map.width,that.map.height,"image/bullet1.png",that.map,that);
+		b.move();
+	},100);	
+}
+
+
+
+function Bullet(boxId,objId,left,top,width,height,timeSpace,incLeft,incTop,maxLeft,maxTop,bgImg,map,myPlane){
+	MoverObject.call(this,boxId,objId,left,top,width,height,timeSpace,incLeft,incTop,maxLeft,maxTop,bgImg);
+	this.map = map;
+	this.myPlane = myPlane;
+	this.myInitUI();
+}
+
+Bullet.prototype = new MoverObject();
+Bullet.prototype.myInitUI = function(){
+	//计算子弹的初始坐标；
+	this.left= this.myPlane.left+(this.myPlane.width-this.width)/2;
+	this.top = this.myPlane.top-this.height;
+	//1、子弹创建，并放在地图里（子弹初始位置）；
+	$(this.objId).style.left = this.left+"px";
+	$(this.objId).style.top = this.top+"px";
+}
+
+
+Bullet.prototype.over = function(){
+	$(this.objId).parentNode.removeChild($(this.objId));	
+	clearInterval(this.timer);
+}
+
+//地图；
+function Map(objId,left,top,width,height,bgImg){
+	this.objId = objId;
+	this.left = left;
+	this.top = top;
+	this.width = width;
+	this.height = height;
+	this.bgImg = bgImg;
+	this.initUI();
+}
+
+Map.prototype.initUI = function(){
+	let map = $create("<div>");
+	map.id = this.objId;
+	map.style.cssText="position:relative;width:"+this.width+"px;height:"+this.height+"px;margin-top:"+this.top+"px;margin-left:"+this.left+"px;background-image:url("+this.bgImg+");";
+	document.body.appendChild(map);
+}
+
+window.onload=function(){
+	let m = new Map("mapId",200,10,400,600,"image/bg.jpg");	
+	let myPlane1 = new MyPlane("mapId","myPlaneId1",20,539,49,61,0,0,0,m.width,m.height,"image/me.png",m);
+//                   	(boxId,objId,left,top,width,height,timeSpace,incLeft,incTop,maxLeft,maxTop,bgImg,map,myPlane)
+
+	myPlane1.shoot();
+	
+    let myPlane2 = new MyPlane("mapId","myPlaneId2",200,539,49,61,0,0,0,m.width,m.height,"image/me.png",m);
+//                   	(boxId,objId,left,top,width,height,timeSpace,incLeft,incTop,maxLeft,maxTop,bgImg,map,myPlane)
+
+	myPlane2.shoot();
+}
+
+
+</script>

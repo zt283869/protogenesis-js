@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function obj(name,sex){
+				this.name = name;
+				this.sex = sex;
+			}
+			function Person(id,iq){
+				this.id = id;
+				this.iq = iq;
+			}
+			Person.prototype = new obj("zhutao",20);
+			Person.prototype.eat = function(){
+				alert(this.name+"-"+this.id);
+			}
+			var str = new Person("007",100);
+//				alert(str.name+str.id);
+			str.eat();
+			
+			function obj2(language){
+				this.language = language;
+			}
+			obj2.prototype = new Person("008",100);
+			var str2 = new obj2("js");
+			str2.eat();
+			alert(str2.name+"-"+str2.id+"-"+str2.language);
+			
+		</script>
+	</body>
+</html>

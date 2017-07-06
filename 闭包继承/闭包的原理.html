@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+			"user strict";
+			function obj(){
+				let temp = 100;
+				let str = function(){
+					temp++;
+					alert(temp);
+				}
+				return str;
+			}
+			let f = obj();
+				//因为f保存为全局变量了，所以f的值保存在内存中
+				f();
+				f();
+				f();
+				//把temp初始化了
+				obj()();
+				obj()();
+				
+		</script>
+	</body>
+</html>

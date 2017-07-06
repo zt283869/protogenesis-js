@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		
+		html{
+			height:100%;
+			width:100%;
+		}
+		
+		body{
+			height:100%;
+			width:100%;
+		}
+		
+		#box{
+			position:relative;
+			width:100%;
+			height:100%;
+			border:0px solid red;
+			margin:0 auto;
+		}	
+		
+		img{
+			position:absolute;
+		}
+		
+		
+	</style>
+<body>	
+	<input id="btn01" type="button" value="测试1"/>
+	<input id="btn02" type="button" value="测试2"/>
+	<input id="btn03" type="button" value="测试3"/>
+	<input id="btn04" type="button" value="测试4"/>
+	<div id="box">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+"use strict";
+
+let f1 = function(){
+		alert("按钮被点了");
+		
+	};
+	
+let f2 = function(ord){
+	alert(ord);
+};
+
+window.onload = function(){
+	let btns = document.getElementsByTagName("input");	
+	for(let i=0;i<btns.length;i++){
+		//赋给事件的函数如果没有参数，可以直接把函数名赋给事件；
+		
+		btns[i].onclick  = f1;
+		
+		//赋给事件的函数如果有参数，需要把函数的调用语句放在一个匿名函数中，再赋给赋给事件；
+	//	btns[i].onclick =function(){ 
+	//		f(i);
+	//	}
+		
+	}
+	
+}
+
+</script>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		
+		html{
+			height:100%;
+			width:100%;
+		}
+		
+		body{
+			height:100%;
+			width:100%;
+		}
+		
+		#box{
+			position:relative;
+			width:100%;
+			height:100%;
+			border:0px solid red;
+			margin:0 auto;
+		}	
+		
+		img{
+			position:absolute;
+		}
+		
+		
+	</style>
+<body>	
+
+</body>
+</html>
+<script type="text/javascript">
+
+
+function eatOut1(){
+	alert("亲");
+}
+
+//eatOut1();//等价于eatOut1.call();
+//eatOut1.call();
+//eatOut1.apply();
+
+
+function Person(id,name){
+	this.id = id;
+	this.name = name;
+	this.eat  = eatOut;
+}
+
+function eatOut(str1,str2){
+	alert(this.name+"在吃"+str1+",同时喝着"+str2);
+}
+
+var p1 = new Person("007","江泽民");
+p1.eat("凉皮","冰峰");
+eatOut.call(p1,"凉皮","冰峰");
+eatOut.apply(p1,["凉皮","冰峰"]);
+
+//p1.eat(p1);
+
+var p2 = new Person("008","白百合");
+//p2.eat();
+
+eatOut.call(p2,"刀削面","面汤");
+eatOut.apply(p2,["刀削面","面汤"]);
+
+function testf(str1,str2){
+	eatOut.call(p2,str1,str2);
+	eatOut.apply(p2,arguments);
+}
+
+
+	function func1(str1,str2){		
+		return str1+str2;	
+	}
+	/*
+	function testApply(){		
+		alert(func1.apply(this,[12,23]));
+		
+		alert(func1.apply(this,["apply()您好，我好，","大家好"]));
+		
+	}
+	*/
+	
+	function testApply1(t1,t2){
+		alert(func1.apply(this,arguments));
+		alert(func1.apply(this,arguments));
+	}
+	
+	function testCall(){
+	
+		func1.call(this,12,23)//this.func1(12,23);
+	
+		alert(func1.call(this,12,23));
+		
+		
+		alert(func1.call(this,"call()您好，我好，","大家好"));
+		
+	}		
+	
+	window.onload=function(){
+		//testApply();    
+		testApply1(12,23);  
+		testApply1("apply()您好，我好，","大家好");
+		testCall();
+	}
+
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+//	var num = 15.6749;
+//	var strnum = num.toString();
+//	var str = strnum.indexOf('.');
+//	var objsub = strnum.substring(str+1,str+2+1);
+//	var strnum2 = strnum.substring(str+1,str+2+1+1);
+//	 var strlingth = parseInt(strnum2[strnum2.length-1-1])+1;
+//	 var strobj = strnum.substr(0,str+3);
+//	 var strtt = strnum.substr(0,str+2)+strlingth;
+//	if(strnum2[strnum2.length-1]>5){
+//		console.log(strtt)
+//	}else{
+//	console.log(strobj)
+//	}
+
+
+
+
+	//封转的5舍6入方法
+	function strnum(num,i){
+	var strnum = num.toString();	
+	var str = strnum.indexOf('.');
+	var objsub = strnum.substring(str+1,str+i+1);
+	var strnum2 = strnum.substring(str+1,str+i+1+1);
+	 var strlingth = parseInt(strnum2[strnum2.length-1-1])+1;
+	 var strobj = strnum.substr(0,str+i+1);
+	 var strtt = strnum.substr(0,str+i)+strlingth;
+	if(strnum2[strnum2.length-1]>5){
+		return(strtt);
+	}else{
+		return(strobj);
+	}
+	}
+	//调用方法
+	var num2 = 15.6759;
+	console.log(strnum(num2,3));
+	
+	
+</script>

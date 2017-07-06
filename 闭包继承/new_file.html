@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="but" value="input_this" />
+		<input type="button" name="obj" id="obj" value="obj_this" />
+		<input type="button" name="windowr" id="windowr" value="window_this" />
+		<script>
+		//this指向当前事件的对象
+			document.getElementById("but").onclick = function(){
+				alert(this);
+			}
+			//对象
+			function strThis(speed){
+				
+				this.speed = speed;
+				this.strate = function(){
+				alert(this);			
+					}
+				this.setTim = function(){
+					setTimeout(function(){
+							alert(this);
+							},this.speed)
+						}
+					};
+			//对象		
+			document.getElementById("obj").onclick = function(){
+				var str = new strThis();
+				str.strate();
+			}
+			//window
+			document.getElementById("windowr").onclick = function(){			
+				var stet = new strThis(1000);
+					stet.setTim();
+			}
+		</script>
+		
+	</body>
+</html>

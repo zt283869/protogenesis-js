@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		
+		html{
+			height:100%;
+			width:100%;
+		}
+		
+		body{
+			height:100%;
+			width:100%;
+		}
+		
+		#box{
+			position:relative;
+			width:100%;
+			height:100%;
+			border:0px solid red;
+			margin:0 auto;
+		}	
+		
+		img{
+			position:absolute;
+		}
+		
+		
+	</style>
+<body>	
+	<input id="btn01" type="button" value="测试1"/>
+	<input id="btn02" type="button" value="测试2"/>
+	<input id="btn03" type="button" value="测试3"/>
+	<input id="btn04" type="button" value="测试4"/>
+	<div id="box">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+"use strict";
+
+
+function Person(id,name){
+	this.id = id;//实例属性：id属性是每个实例所特有的，即每个实例的id属性的值不一样。
+	this.name = name;//实例属性：name属性是每个实例所特有的，即每个实例的name属性的值不一样
+}
+
+//原型属性：prototype。
+//把所有实例共享的属性，用原型（prototype）的方式进行处理。
+Person.prototype.country = "中国";//原型的属性
+Person.prototype.eat= function(str){
+	alert(this.name+"在吃"+str);
+}
+
+window.onload = function(){
+
+	let p1 = new Person("007","江泽民");	
+	//p1.eat("六味地黄丸");
+	alert(p1.name);
+	alert(p1.country);
+	
+	let p2 = new Person("008","白百合");
+	//p2.eat("七日断肠散");
+	alert(p2.name);
+	alert(p2.country);
+	
+}
+
+</script>

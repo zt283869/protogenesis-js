@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset = "utf-8"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		
+		html{
+			height:100%;
+			width:100%;
+		}
+		
+		body{
+			height:100%;
+			width:100%;
+		}
+		
+		#box{
+			position:relative;
+			width:100%;
+			height:100%;
+			border:0px solid red;
+			margin:0 auto;
+		}	
+		
+		img{
+			position:absolute;
+		}
+		
+		
+	</style>
+<body>	
+	<input id="btn01" type="button" value="测试1"/>
+	<input id="btn02" type="button" value="测试2"/>
+	<input id="btn03" type="button" value="测试3"/>
+	<input id="btn04" type="button" value="测试4"/>
+	<div id="box">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+"use strict";
+
+var person1 = {
+	name:"刘德华",
+	sex:"男",
+	age:25
+};
+
+var person2 = {
+	name:"赵本山",
+	sex:"男",
+	age:51
+};  
+   
+
+function func1(){
+	alert("姓名："+this.name+"，性别："+this.sex+"，年龄"+this.age);
+}
+
+//解耦：降低耦合度（联系）
+//把函数和对象之间的联系给解除掉了。
+
+window.onload=function(){
+	//func1.apply(person1);//通过apply的第一个参数把函数执行的环境进行了传递。
+	func1.call(person1);
+	//func1.apply(person2);
+}
+
+</script>

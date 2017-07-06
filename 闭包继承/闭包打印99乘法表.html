@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function obj(){
+				for(var i=0;i<=9;i++){
+					(function(num){
+						for(var j=0;j<=num;j++){
+							document.write(j+"*"+i+"="+i*j+ " &nbsp;");
+						}
+					})(i);
+					document.write("<br />")
+				}
+			}
+			obj();
+		</script>
+	</body>
+</html>
